@@ -1,6 +1,7 @@
 const { createFilePath } = require("gatsby-source-filesystem")
 const path = require(`path`)
 
+//Using onCreateNode lifecycle method to create slugs for MDX files
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
@@ -15,7 +16,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  // Destructure the createPage function from the actions object
   const { createPage } = actions
   const result = await graphql(`
     query {
@@ -26,6 +26,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            parent {
+              ... on File {
+                absolutePath
+              }
+            }
           }
         }
       }
@@ -34,13 +39,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
+  const projects = result.data.allMdx.edges
 
-  const posts = result.data.allMdx.edges
-
-  posts.forEach(({ node }, i) => {
+  //Creating project pages
+  projects.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/components/Layout.tsx`),
+      component: node.parent.absolutePath,
       // context: { id: node.id },
     })
   })

@@ -1,8 +1,8 @@
-import '../../../static/fonts/inter-ui.css'
+import '../../../static/fonts/inter.css'
 
 const BASELINE = 20;
 const BORDER_RADIUS = 4;
-const CONTENT_WIDTH = 670;
+const CONTENT_WIDTH = 800;
 
 const SCALES = {
   XXSMALL: 0.25,
@@ -20,8 +20,8 @@ export default {
     background: "#FFF",
     border: "#E1E1E5",
     hover: "#F8F9F9",
-    text: "#4C4760",
-    textMuted: "#A9A6B6",
+    text: "#1A1F2B",
+    textMuted: "#9E9FA0",
     primary: "#5A51FB",
     secondary: "#5FAAFC"
   },
@@ -31,7 +31,7 @@ export default {
       xsmall: `${SCALES.XSMALL + 0.2}rem`,
       small: `${SCALES.SMALL}rem`,
       regular: `${SCALES.MEDIUM}rem`,
-      h1: `${SCALES.XLARGE}rem`,
+      h1: `${SCALES.XXLARGE}rem`,
       h2: `${SCALES.LARGE}rem`,
       h3: `${SCALES.MEDIUM + 0.25}rem`,
       h4: `${SCALES.MEDIUM + 0.05}rem`

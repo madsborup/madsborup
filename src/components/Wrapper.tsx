@@ -7,6 +7,8 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
 `
 
-export const Wrapper: React.FC = ({ children }) => {
+const Wrapper: React.FC = ({ children }) => {
   return <StyledWrapper>{children}</StyledWrapper>
 }
+
+export default Wrapper;

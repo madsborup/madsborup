@@ -1,4 +1,3 @@
----
-title: Projects
----
-Here are all the projects
+import ProjectsList from '../components/ProjectsList'
+
+<ProjectsList />
