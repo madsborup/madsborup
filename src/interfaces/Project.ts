@@ -1,12 +1,13 @@
 export interface ProjectData {
   title: string
   description: string
-  category: string;
+  featuredImage?: string
+  category: string
   links?: {url: string; label: string}[]
-  contribution: string[]
+  contribution?: string[]
   time?: string
   about: string
   tools: string[]
-  outcome?: string;
-  sideProject: boolean;
+  outcome?: string
+  sideProject: boolean
 }

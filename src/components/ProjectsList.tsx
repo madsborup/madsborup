@@ -7,20 +7,21 @@ import H2 from "./designSystem/H2"
 import styled from "styled-components"
 
 const Section = styled.div`
-margin-bottom: ${tokens.spacing.xlarge}px;
-`;
+  margin-bottom: calc(${tokens.spacing.xlarge}px * 2);
+`
 
 const ProjectsList = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMdx {
+        allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               frontmatter {
                 title
                 description
                 sideProject
+                date(formatString: "dddd, MMMM Do YYYY")
               }
               fields {
                 slug

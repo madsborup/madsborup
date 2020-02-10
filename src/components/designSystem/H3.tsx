@@ -3,5 +3,6 @@ import tokens from './tokens'
 
 export default styled.h3`
   font-size: ${tokens.font.size.h3};
-  margin-bottom: ${tokens.spacing.medium}px;
+  color: ${tokens.colors.headings};
+  margin: ${tokens.spacing.medium}px 0;
 `;

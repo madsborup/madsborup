@@ -1,5 +1,6 @@
 ---
 title: "OWS"
+date: 2017-04-01
 description: "an application for managing mechanics time at a car dealership."
 category: "Windows application"
 time: "2017 - 4 months"
@@ -22,9 +23,10 @@ import test from '../assets/images/projects/ows/test.png'
 import ipad from '../assets/images/projects/ows/ipad.png'
 import ProjectHeader from "../components/ProjectHeader"
 
+[<- back to projects](/projects)
 <ProjectHeader project={props.pageContext.frontmatter} />
 
-<Image src={desk}> Image of working environment of the mechanic managers.</Image>
+<Image src={desk}> Working environment of the mechanic managers.</Image>
 <Image src={sketch_1} />
 <Image src={sketch_2} />
 <Image src={sketch_3} />

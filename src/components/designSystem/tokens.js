@@ -20,9 +20,10 @@ export default {
     background: "#FFF",
     border: "#E1E1E5",
     hover: "#F8F9F9",
-    text: "#1A1F2B",
-    textMuted: "#9E9FA0",
-    primary: "#5A51FB",
+    headings: "#000",
+    text: "#333",
+    textMuted: "#a3a3a3",
+    primary: "#2e70dc",
     secondary: "#5FAAFC"
   },
   font: {

@@ -1,5 +1,6 @@
 ---
 title: "madsborup"
+date: 2019-12-04
 description: "my personal site."
 category: "Web application"
 links: 
@@ -12,9 +13,10 @@ tools:
 - "Gatsby.js"
 - "TypeScript"
 - "styled-components"
-about: "Duks is a simple project-management application for people working in changing teams/groups. With Duks people can create projects, invite people and manage flows (time-boxed groups of tasks)."
+about: "My personal site."
 ---
 
 import ProjectHeader from "../components/ProjectHeader"
 
+[<- back to projects](/projects)
 <ProjectHeader project={props.pageContext.frontmatter} />

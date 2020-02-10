@@ -1,5 +1,6 @@
 ---
 title: "International Staff Unit"
+date: 2019-01-01
 description: "a redesign of the website for international staff at Aalborg University. "
 category: "Web - CMS"
 time: "2018 6 months"
@@ -15,4 +16,5 @@ about: "Duks is a simple project-management application for people working in ch
 
 import ProjectHeader from "../components/ProjectHeader"
 
+[<- back to projects](/projects)
 <ProjectHeader project={props.pageContext.frontmatter} />

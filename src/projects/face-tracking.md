@@ -1,12 +1,13 @@
 ---
 title: "Face tracking"
+date: 2017-01-01
 description: "mapping face tracking to surface."
 category: "Web application"
 contribution: 
 - "Personal project"
 tools: 
 - "p5.js"
-about: Small thing i made to try out the p5.js face tracking library. Gives an illusion of being able to "look behind" a surface as it responds to face movement.
+about: One day project. The objective was to map face movements to a surface using the p5.js face tracking library. Inspired by Jim Campbell's lo-fi installations.
 
 sideProject: true
 ---
@@ -17,6 +18,7 @@ import face_tracking from '../assets/images/projects/face_tracking/face_tracking
 
 import ProjectHeader from "../components/ProjectHeader"
 
+[<- back to projects](/projects)
 <ProjectHeader project={props.pageContext.frontmatter} />
 <Image src={face_screen}/>
 <Video src={tracking_video} autoPlay loop muted/>

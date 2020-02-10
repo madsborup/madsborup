@@ -1,8 +1,8 @@
----
-title: Hello, world!
----
-I’m a front-end developer-in-progress with a BSc in Interaction Design. I’m currently learning what’s working on the web and how to use the best tools to create.
-Currently interested in React, TypeScript and how to build with styled-components.
+import cover from '../assets/images/cover.png'
 
+<Image src={cover} />
 
-<Link to="/about">More about me -></Link>
+Hi, my name is Mads. I’m a developer-in-progress with a BSc in Interaction Design. I’m currently learning what’s working on the web and the best tools to build.
+
+<Link to="/projects">My projects -></Link>
+

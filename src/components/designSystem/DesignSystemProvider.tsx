@@ -7,7 +7,9 @@ const DesignSystemProvider: React.FC = ({children}) =>  {
     <MDXProvider components={{
       a: designSystem.Link,
       h1: designSystem.H1,
+      h2: designSystem.H2,
       h3: designSystem.H3,
+      h4: designSystem.H4,
       p: designSystem.P,
       Link: designSystem.Link,
       Image: designSystem.Image,

@@ -27,7 +27,6 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
   `
 
   const Title = styled(H1)`
-    color: ${tokens.colors.text};
     border-bottom: 1px solid ${tokens.colors.border};
     margin-bottom: ${tokens.spacing.medium}px;
     padding-bottom: ${tokens.spacing.xxsmall}px;
@@ -74,12 +73,14 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
           )}
         </Column>
         <Column>
-          <Row>
-            <Heading>Contribution</Heading>
-            {contribution.map(contr => (
-              <span>{contr}</span>
-            ))}
-          </Row>
+          {contribution && (
+            <Row>
+              <Heading>Contribution</Heading>
+              {contribution.map(contr => (
+                <span>{contr}</span>
+              ))}
+            </Row>
+          )}
           <Row>
             <Heading>Tools</Heading>
             {tools.map(tool => (

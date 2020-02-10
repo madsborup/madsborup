@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import tokens from './designSystem/tokens'
 import DesignSystemProvider from './designSystem/DesignSystemProvider'
 import Header from './Header'
+import Footer from './Footer'
 import Wrapper from './Wrapper'
 
 interface Props {
@@ -39,6 +40,7 @@ export default ({children}: Props): ReactElement<typeof DesignSystemProvider> =>
       <Wrapper>
       {children}
       </Wrapper>
+      <Footer />
     </DesignSystemProvider>
   )
 }
