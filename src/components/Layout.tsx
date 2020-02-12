@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react'
-import { createGlobalStyle } from "styled-components";
-import tokens from './designSystem/tokens'
-import DesignSystemProvider from './designSystem/DesignSystemProvider'
-import Header from './Header'
-import Footer from './Footer'
-import Wrapper from './Wrapper'
+import React, { ReactElement } from "react"
+import { createGlobalStyle } from "styled-components"
+import tokens from "./designSystem/tokens"
+import DesignSystemProvider from "./designSystem/DesignSystemProvider"
+import Header from "./Header"
+import Footer from "./Footer"
+import Wrapper from "./Wrapper"
 
 interface Props {
   children: React.ReactNode
@@ -28,18 +28,18 @@ const GlobalStyle = createGlobalStyle`
     body {
         color: ${tokens.colors.text};
         font-size: ${tokens.font.size.regular};
-        line-height: 1.4;
+        line-height: 1.5;
     }
-`;
+`
 
-export default ({children}: Props): ReactElement<typeof DesignSystemProvider> => {
+export default ({
+  children,
+}: Props): ReactElement<typeof DesignSystemProvider> => {
   return (
     <DesignSystemProvider>
       <GlobalStyle />
       <Header title="Mads Borup Petersen" />
-      <Wrapper>
-      {children}
-      </Wrapper>
+      <Wrapper>{children}</Wrapper>
       <Footer />
     </DesignSystemProvider>
   )

@@ -2,15 +2,17 @@ import React from "react"
 import styled from "styled-components"
 import tokens from "./tokens"
 
+type Align = 'right' | 'left'
+
 interface Props {
   src: string
   maxWidth?: string
-  align?: "right" | "left"
+  align?: Align
   children?: React.ReactNode;
 }
 
 interface ContainerProps {
-  align: "right" | "left"
+  align: Align
 }
 
 interface ImageProps {
@@ -18,35 +20,37 @@ interface ImageProps {
 }
 
 const Image: React.FC<Props> = ({ src, maxWidth, align, children }: Props) => {
-  const handleMargin = (align: "right" | "left") => {
+  const handleMargin = (align: Align) => {
     if (align === "right") {
       return `0 0 ${tokens.spacing.medium}px ${tokens.spacing.small}px`
     }
     if (align === 'left') {
       return `0 ${tokens.spacing.small}px ${tokens.spacing.medium}px 0`
     }
-
     return `${tokens.spacing.large}px 0`
   }
 
   const Container = styled.div<ContainerProps>`
     display: flex;
     flex-direction: column;
+    background: ${tokens.colors.border};
     margin-bottom: ${({ align }) => align && `${tokens.spacing.medium}px`};
     margin: ${({ align }) => handleMargin(align)};
     float: ${({ align }) => align};
   `
 
   const StyledImage = styled.img<ImageProps>`
-    width: ${({ maxWidth }) => (maxWidth ? maxWidth : "100%")};
+    max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "100%")};
+    margin: 0 auto;
     order: 1;
   `
 
   const Caption = styled.span`
-    margin-top: ${tokens.spacing.xsmall}px;
+    padding-top: ${tokens.spacing.xsmall}px;
     font-size: ${tokens.font.size.small};
     color: ${tokens.colors.textMuted};
     order: 2;
+    background: white;
   `
 
   return (

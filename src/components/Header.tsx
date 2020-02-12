@@ -25,6 +25,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
 
   const NavLink = styled(PlainLink)`
     color: ${tokens.colors.textMuted};
+    font-size: ${tokens.font.size.h4};
     font-weight: 500;
 
     &:hover {

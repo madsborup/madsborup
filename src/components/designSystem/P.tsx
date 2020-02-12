@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Wrapper from '../Wrapper'
 import tokens from './tokens'
 
 export default styled.p`
@@ -7,3 +8,4 @@ export default styled.p`
   font-weight: 400;
   margin-bottom: ${tokens.spacing.medium}px;
 `;
+
