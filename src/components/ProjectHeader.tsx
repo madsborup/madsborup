@@ -34,12 +34,11 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
 
   const MetaContainer = styled.div`
     display: grid;
-    grid-template-columns:
-      calc(${tokens.spacing.large}px * 5) calc(${tokens.spacing.large}px * 7)
-      1fr;
-    grid-gap: ${tokens.spacing.medium}px;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-gap: ${tokens.spacing.small}px;
     width: 100%;
-    margin-bottom: ${tokens.spacing.large}px;
+    margin-bottom: ${tokens.spacing.medium}px;
+    border-bottom: 1px solid ${tokens.colors.border};
   `
 
   const Column = styled.div`
@@ -63,7 +62,13 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
       <MetaContainer>
         <Column>
           <Row>{category}</Row>
-          {time && <Row>{time}</Row>}
+          {time && (
+            <Row>
+              {time.map(item => (
+                <span>{item}</span>
+              ))}
+            </Row>
+          )}
           {links && (
             <Row>
               {links.map(link => (
@@ -75,9 +80,9 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
         <Column>
           {contribution && (
             <Row>
-              <Heading>Contribution</Heading>
-              {contribution.map(contr => (
-                <span>{contr}</span>
+              <Heading>My Contribution</Heading>
+              {contribution.map(item => (
+                <span>{item}</span>
               ))}
             </Row>
           )}
