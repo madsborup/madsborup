@@ -7,8 +7,17 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
 `
 
+const Content = styled.div`
+  margin-top: calc(${tokens.spacing.xlarge}px * 2);
+  padding: 0 ${tokens.spacing.xsmall}px;
+`
+
 const Wrapper: React.FC = ({ children }) => {
-  return <StyledWrapper>{children}</StyledWrapper>
+  return (
+    <StyledWrapper>
+      <Content>{children}</Content>
+    </StyledWrapper>
+  )
 }
 
-export default Wrapper;
+export default Wrapper

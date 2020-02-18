@@ -17,18 +17,18 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         -webkit-appearance: none;
         -webkit-font-smoothing: auto;
+        -webkit-font-smoothing: antialiased;
     }
 
     html {
         font-family: ${tokens.font.family};
-        background-color: white;
-        margin: 0 ${tokens.spacing.large}px;
+        background-color: ${tokens.colors.background};
     }
 
     body {
         color: ${tokens.colors.text};
         font-size: ${tokens.font.size.regular};
-        line-height: 1.5;
+        line-height: 1.6;
     }
 `
 

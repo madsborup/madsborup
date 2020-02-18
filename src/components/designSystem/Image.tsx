@@ -50,7 +50,7 @@ const Image: React.FC<Props> = ({ src, maxWidth, align, children }: Props) => {
     font-size: ${tokens.font.size.small};
     color: ${tokens.colors.textMuted};
     order: 2;
-    background: white;
+    background: ${tokens.colors.background};
   `
 
   return (
