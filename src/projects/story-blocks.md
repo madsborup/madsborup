@@ -2,7 +2,7 @@
 title: "Story Blocks"
 date: 2017-12-01
 description: "a tangible language for teaching Computational Thinking."
-category: "Physical product"
+category: Physical Product
 time: 
 - 2017
 - 4 months
@@ -12,8 +12,9 @@ contribution:
 - Graphics
 - Arduino prototyping
 tools: 
-- "Arduino"
-- "Rhino 3D"
+- Arduino
+- Solidworks
+- Adobe Illustrator
 about: In recent years there has been an inceased focus on giving children in the danish primary school better digital skills. Story Blocks was proposed as a solution to help teachers facilitate programming concepts while maintaining the engagement of students.
 ---
 import cover from '../assets/images/projects/story_blocks/cover.png'
@@ -25,7 +26,7 @@ import sider from '../assets/images/projects/story_blocks/sider.png'
 import sider_poster from '../assets/images/projects/story_blocks/sider_poster.png'
 import ProjectHeader from "../components/ProjectHeader"
 
-[<- back to projects](/projects)
+[<- back to projects](/projects/)
 <ProjectHeader project={props.pageContext.frontmatter} />
 
 ## Challenge 
@@ -40,12 +41,14 @@ With Story Blocks students can create small naratives around a scene (like a dol
 In this implementation a house was chosen as the scene. In this scene students can control a door, lights, a window and a garage. Students can place characters (dolls) at different spots to test their programming of the controlled parts of the scene. 
 An example scenario could be that the students have programmed the door to open <code>IF</code> <b>cat</b> is in front of <b>window</b> <code>OR</code> <b>girl</b> is in front of <b>door</b>. 
 
-<Image src={character}>One of the characters being used in the house scene.</Image>
+<Image src={character}>A character being used in the house scene.</Image>
 
 <Image src={test}>Early test with 2nd grade students using a cardboard prototype (left). Test with functioning prototype (right).</Image>
 
+---
+
 ## SIDeR 2018
-A small paper and poster about this project was accepted at [SIDeR 2018](http://sider18.aalto.fi). Read the proceedings [here](http://sider18.aalto.fi/img/FINAL-180527-SIDeR18ConferenceDigitalProceedings.pdf) (p. 140). 
+A small paper and poster about this project was accepted at [SIDeR 2018](http://sider18.aalto.fi). I attended along with another project member. Read the proceedings [here](http://sider18.aalto.fi/img/FINAL-180527-SIDeR18ConferenceDigitalProceedings.pdf) (p. 140). 
 
 <Image src={sider} />
 <Image src={sider_poster} maxWidth="700px">Poster presented at SIDeR.</Image>

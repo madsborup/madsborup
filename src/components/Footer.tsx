@@ -7,11 +7,10 @@ const Footer: React.FC = () => {
   const StyledFooter = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: ${tokens.colors.white};
     border-top: 1px solid ${tokens.colors.border};
     max-width: ${tokens.CONTENT_WIDTH}px;
     margin: ${tokens.spacing.large}px auto 0;
-    padding: ${tokens.spacing.small}px 0 ${tokens.spacing.xlarge}px;
+    padding: ${tokens.spacing.small}px ${tokens.spacing.xsmall}px ${tokens.spacing.xlarge}px;
   `
 
   const Section = styled.div`

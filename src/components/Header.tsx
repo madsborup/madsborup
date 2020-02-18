@@ -9,47 +9,68 @@ interface Props {
 
 const Header: React.FC<Props> = ({ title }: Props) => {
   const StyledHeader = styled.div`
-    justify-content: space-between;
-    border-bottom: 1px solid ${tokens.colors.border};
-    padding: ${tokens.spacing.large}px 0 ${tokens.spacing.xxsmall}px;
-    margin-bottom: ${tokens.spacing.xlarge}px;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: ${tokens.spacing.xxsmall}px ${tokens.spacing.xxsmall}px;
+    background: ${tokens.colors.white};
+    box-shadow: 0px 2px 12px -10px rgba(0, 0, 0, 0.25);
   `
 
   const Nav = styled.nav`
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    grid-gap: ${tokens.spacing.large}px;
-    max-width: ${tokens.CONTENT_WIDTH}px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    column-gap: ${tokens.spacing.small}px;
+    row-gap: ${tokens.spacing.small}px;
+    width: 100%;
+    max-width: 600px;
   `
 
   const NavLink = styled(PlainLink)`
-    color: ${tokens.colors.textMuted};
-    font-size: ${tokens.font.size.h4};
-    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    color: ${tokens.colors.headings};
+    font-size: ${tokens.font.size.h5};
+    padding: ${tokens.spacing.xsmall}px 0;
+    border-radius: ${tokens.BORDER_RADIUS}px;
+    font-weight: 600;
+    margin: 0 2px;
 
     &:hover {
-      color: ${tokens.colors.text};
+      color: ${tokens.colors.headings};
+      background: ${tokens.colors.background};
       text-decoration: none;
     }
 
     &.${props => props.activeClassName} {
-      color: ${tokens.colors.text};
+      color: ${tokens.colors.primary};
+      background: ${tokens.colors.primaryMuted};
     }
   `
 
-  const links = [
-    { label: "Mads Borup Petersen", to: "/" },
-    { label: "Projects", to: "/projects" },
-    { label: "About me", to: "/about" },
-  ]
+  // const links = [
+  //   { label: "Home", to: "/" },
+  //   { label: "Projects", to: "/projects" },
+  //   { label: "About me", to: "/about" },
+  // ]
 
   return (
     <StyledHeader>
       <Nav>
-        {links.map(({ label, to }) => (
-          <NavLink to={to} activeClassName="active">{label}</NavLink>
-        ))}
+        <NavLink to="/" activeClassName="active">
+          Mads Borup Petersen
+        </NavLink>
+        <NavLink
+          to="/projects/"
+          activeClassName="active"
+          partiallyActive={true}
+        >
+          Projects
+        </NavLink>
       </Nav>
     </StyledHeader>
   )
