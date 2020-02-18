@@ -25,6 +25,7 @@ const ProjectLink: React.FC<Props> = ({ to, title, description }) => {
   const ProjectDescription = styled.div`
     color: ${tokens.colors.text};
     font-size: ${tokens.font.size.h4};
+    text-transform: lowercase;
   `
 
   return (

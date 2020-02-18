@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+import tokens from "./designSystem/tokens"
 import H1 from "./designSystem/H1"
 import Link from "./designSystem/Link"
 import { ProjectData } from "../interfaces/Project"
-import tokens from "./designSystem/tokens"
 
 interface Props {
   project: ProjectData
@@ -24,21 +24,8 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
   const StyledProjectHeader = styled.div`
     display: flex;
     flex-direction: column;
-  `
-
-  const Title = styled(H1)`
-    border-bottom: 1px solid ${tokens.colors.border};
-    margin-bottom: ${tokens.spacing.medium}px;
-    padding-bottom: ${tokens.spacing.xxsmall}px;
-  `
-
-  const MetaContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-gap: ${tokens.spacing.small}px;
-    width: 100%;
-    margin-bottom: ${tokens.spacing.medium}px;
-    border-bottom: 1px solid ${tokens.colors.border};
+    margin-top: ${tokens.spacing.xlarge}px;
+    color: ${tokens.colors.headings};
   `
 
   const Column = styled.div`
@@ -50,18 +37,59 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
     display: flex;
     flex-direction: column;
     margin-bottom: ${tokens.spacing.medium}px;
+    align-items: flex-start;
+  `
+
+  const Title = styled(H1)`
+    line-height: 1.2;
+    margin-bottom: ${tokens.spacing.small}px;
+  `
+
+  const Tools = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: ${tokens.spacing.medium}px;
+    padding-bottom: ${tokens.spacing.xsmall}px;
+    border-bottom: 1px solid ${tokens.colors.border};
   `
 
   const Heading = styled.span`
     color: ${tokens.colors.textMuted};
   `
 
+  const Category = styled.span`
+    color: ${tokens.colors.textMuted};
+  `
+
+  const Tag = styled.div`
+    background: ${tokens.colors.border};
+    color: ${tokens.colors.text};
+    padding: 0 ${tokens.spacing.xsmall}px;
+    margin-right: ${tokens.spacing.xxsmall}px;
+    margin-bottom: ${tokens.spacing.xxsmall}px;
+    border-radius: 4px;
+  `
+
+  const MetaContainer = styled.div`
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 2fr;
+    grid-gap: ${tokens.spacing.medium}px;
+    width: 100%;
+    margin-bottom: ${tokens.spacing.medium}px;
+    border-bottom: 1px solid ${tokens.colors.border};
+  `
+
   return (
     <StyledProjectHeader>
+      {category && <Category>{category}</Category>}
       <Title>{title}</Title>
+      <Tools>
+        {tools.map(tool => (
+          <Tag>{tool}</Tag>
+        ))}
+      </Tools>
       <MetaContainer>
         <Column>
-          <Row>{category}</Row>
           {time && (
             <Row>
               {time.map(item => (
@@ -86,12 +114,6 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
               ))}
             </Row>
           )}
-          <Row>
-            <Heading>Tools</Heading>
-            {tools.map(tool => (
-              <span>{tool}</span>
-            ))}
-          </Row>
         </Column>
         <Column>
           <Row>

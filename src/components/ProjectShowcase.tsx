@@ -1,27 +1,31 @@
 import React from "react"
-import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 import tokens from "./designSystem/tokens"
+import H2 from './designSystem/H2'
 import ProjectCard from "./ProjectCard"
-import studio from '../assets/images/studio.jpg'
 
-const StyledProjectShowcase = styled.div`
+const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: ${tokens.spacing.medium}px;
-`
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  width: 100%;
+`;
 
 const ProjectShowcase = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMdx(limit: 2, sort: { fields: frontmatter___date, order: DESC }) {
+        allMdx(limit: 1, sort: { order: DESC, fields: frontmatter___date }) {
           edges {
             node {
               frontmatter {
                 title
                 description
-                featuredImage
+                tools
+                links {
+                  url
+                  label
+                }
               }
             }
           }
@@ -29,17 +33,25 @@ const ProjectShowcase = () => (
       }
     `}
     render={data => (
-      <StyledProjectShowcase>
-        {data.allMdx.edges.map(project => {
+      <React.Fragment>
+        <H2>Recent Projects</H2>
+      <Container>
+        {data.allMdx.edges.map((edge, i) => {
+          const {title, description, tools, links} = edge.node.frontmatter;
+
           return (
             <ProjectCard
-              title={project.node.frontmatter.title}
-              description={project.node.frontmatter.description}
-              image={studio}
+              title={title}
+              description={description}
+              image="/"
+              tools={tools}
+              links={links}
+              key={i}
             />
           )
         })}
-      </StyledProjectShowcase>
+      </Container>
+      </React.Fragment>
     )}
   />
 )

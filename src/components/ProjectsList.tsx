@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 import tokens from "./designSystem/tokens"
 import ProjectLink from "./ProjectLink"
 import H1 from "./designSystem/H1"
@@ -7,7 +8,7 @@ import H2 from "./designSystem/H2"
 import styled from "styled-components"
 
 const Section = styled.div`
-  margin-bottom: calc(${tokens.spacing.xlarge}px * 2);
+  margin-bottom: calc(${tokens.spacing.large}px * 2);
 `
 
 const ProjectsList = () => (
@@ -36,15 +37,19 @@ const ProjectsList = () => (
         <Section>
           <H1>Projects</H1>
           {data.allMdx.edges
-            .filter(project => !project.node.frontmatter.sideProject)
-            .map((project, i) => {
+            .filter(edge => !edge.node.frontmatter.sideProject)
+            .map((edge, i) => {
+              let project = edge.node;
+
               return (
+                <React.Fragment>
                 <ProjectLink
-                  to={project.node.fields.slug}
-                  title={project.node.frontmatter.title}
-                  description={project.node.frontmatter.description}
+                  to={project.fields.slug}
+                  title={project.frontmatter.title}
+                  description={project.frontmatter.description}
                   key={i}
                 />
+                </React.Fragment>
               )
             })}
         </Section>
