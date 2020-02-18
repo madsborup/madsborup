@@ -3,6 +3,7 @@ import H2 from './H2'
 import H3 from './H3'
 import H4 from './H4'
 import P from './P'
+import Break from './Break'
 import Link from './Link'
 import PlainLink from './PlainLink'
 import Image from './Image'
@@ -14,6 +15,7 @@ export {
   H3,
   H4,
   P,
+  Break,
   Link,
   PlainLink,
   Image,
