@@ -1,13 +1,13 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from 'gatsby-image'
+import Img from "gatsby-image"
 import tokens from "./designSystem/tokens"
 import ProjectLink from "./ProjectLink"
 import H1 from "./designSystem/H1"
 import H2 from "./designSystem/H2"
 import styled from "styled-components"
 
-const Section = styled.div`
+const List = styled.div`
   margin-bottom: calc(${tokens.spacing.large}px * 2);
 `
 
@@ -34,26 +34,24 @@ const ProjectsList = () => (
     `}
     render={data => (
       <React.Fragment>
-        <Section>
+        <List>
           <H1>Projects</H1>
           {data.allMdx.edges
             .filter(edge => !edge.node.frontmatter.sideProject)
             .map((edge, i) => {
-              let project = edge.node;
+              let project = edge.node
 
               return (
-                <React.Fragment>
                 <ProjectLink
                   to={project.fields.slug}
                   title={project.frontmatter.title}
                   description={project.frontmatter.description}
                   key={i}
                 />
-                </React.Fragment>
               )
             })}
-        </Section>
-        <Section>
+        </List>
+        <List>
           <H2>Other</H2>
           {data.allMdx.edges
             .filter(project => project.node.frontmatter.sideProject)
@@ -67,7 +65,7 @@ const ProjectsList = () => (
                 />
               )
             })}
-        </Section>
+        </List>
       </React.Fragment>
     )}
   />

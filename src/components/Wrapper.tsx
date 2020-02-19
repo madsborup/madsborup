@@ -3,13 +3,17 @@ import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 
 const StyledWrapper = styled.div`
-  max-width: ${tokens.CONTENT_WIDTH}px;
-  margin: 0 auto;
+  margin-top: calc(${tokens.spacing.large}px * 2);
+  padding: 0 ${tokens.spacing.xsmall}px;
 `
 
 const Content = styled.div`
-  margin-top: calc(${tokens.spacing.xlarge}px * 2);
-  padding: 0 ${tokens.spacing.xsmall}px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
 `
 
 const Wrapper: React.FC = ({ children }) => {

@@ -1,14 +1,25 @@
 import React, { ReactElement } from "react"
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 import DesignSystemProvider from "./designSystem/DesignSystemProvider"
 import Header from "./Header"
 import Footer from "./Footer"
-import Wrapper from "./Wrapper"
 
 interface Props {
   children: React.ReactNode
 }
+
+const Wrapper = styled.div`
+  max-width: ${tokens.CONTENT_WIDTH}px;
+  margin: 0 auto;
+`
+
+const Content = styled.div`
+  margin-top: calc(${tokens.spacing.large}px * 2);
+  padding: 0 ${tokens.spacing.xsmall}px;
+`
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -39,7 +50,9 @@ export default ({
     <DesignSystemProvider>
       <GlobalStyle />
       <Header title="Mads Borup Petersen" />
-      <Wrapper>{children}</Wrapper>
+      <Wrapper>
+        <Content>{children}</Content>
+      </Wrapper>
       <Footer />
     </DesignSystemProvider>
   )

@@ -5,10 +5,15 @@ import tokens from "./designSystem/tokens"
 import H2 from './designSystem/H2'
 import ProjectCard from "./ProjectCard"
 
+const StyledProjectShowcase = styled.div`
+  margin-top: ${tokens.spacing.xlarge}px;
+  max-width: 100%;
+`;
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
-  width: 100%;
+  grid-gap: ${tokens.spacing.small}px;
 `;
 
 const ProjectShowcase = () => (
@@ -33,8 +38,7 @@ const ProjectShowcase = () => (
       }
     `}
     render={data => (
-      <React.Fragment>
-        <H2>Recent Projects</H2>
+      <StyledProjectShowcase>
       <Container>
         {data.allMdx.edges.map((edge, i) => {
           const {title, description, tools, links} = edge.node.frontmatter;
@@ -51,7 +55,7 @@ const ProjectShowcase = () => (
           )
         })}
       </Container>
-      </React.Fragment>
+      </StyledProjectShowcase>
     )}
   />
 )

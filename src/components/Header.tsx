@@ -62,7 +62,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     <StyledHeader>
       <Nav>
         <NavLink to="/" activeClassName="active">
-          Mads Borup Petersen
+          Home
         </NavLink>
         <NavLink
           to="/projects/"
@@ -70,6 +70,9 @@ const Header: React.FC<Props> = ({ title }: Props) => {
           partiallyActive={true}
         >
           Projects
+        </NavLink>
+        <NavLink to="/about/" activeClassName="active">
+          About me
         </NavLink>
       </Nav>
     </StyledHeader>

@@ -42,14 +42,15 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
 
   const Title = styled(H1)`
     line-height: 1.2;
-    margin-bottom: ${tokens.spacing.small}px;
+    margin-bottom: ${tokens.spacing.xsmall}px;
+    margin-top: ${tokens.spacing.xsmall}px;
   `
 
   const Tools = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: ${tokens.spacing.medium}px;
-    padding-bottom: ${tokens.spacing.xsmall}px;
+    margin-bottom: ${tokens.spacing.small}px;
+    padding-bottom: ${tokens.spacing.small}px;
     border-bottom: 1px solid ${tokens.colors.border};
   `
 
