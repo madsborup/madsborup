@@ -1,3 +1,4 @@
 {
-  "files.associations": {"*.md": "mdx"}
+  "files.associations": {"*.md": "mdx"},
+  "colorize.languages": ["typescript", "javascript", "css", "scss"]
 }

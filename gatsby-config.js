@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
     title: `Title from siteMetadata`,
@@ -12,6 +6,8 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -23,7 +19,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/assets/`,
+        path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     {
@@ -37,6 +40,13 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+              showCaptions: true,
+              markdownCaptions: true,
+              linkImagesToOriginal: false,
+              wrapperStyle: 'margin-bottom: 20px',
+            }
           },
         ],
       },

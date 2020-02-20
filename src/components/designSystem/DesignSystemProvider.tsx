@@ -12,6 +12,8 @@ const DesignSystemProvider: React.FC = ({children}) =>  {
       h4: designSystem.H4,
       p: designSystem.P,
       hr: designSystem.Break,
+      figcaption: designSystem.Figcaption,
+      Img: designSystem.Img,
       Link: designSystem.Link,
       Image: designSystem.Image,
       Video: designSystem.Video
