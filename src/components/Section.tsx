@@ -7,9 +7,9 @@ const StyledSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  flex: 1;
-  max-width: ${tokens.CONTENT_WIDTH}px;
+  margin-top: ${tokens.spacing.xlarge}px;
   width: 100%;
+  max-width: ${tokens.CONTENT_WIDTH}px;
 `;
 
 const Section: React.FC = ({children}) => {

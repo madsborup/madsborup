@@ -9,46 +9,37 @@ interface Props {
 
 const Header: React.FC<Props> = ({ title }: Props) => {
   const StyledHeader = styled.div`
-    position: sticky;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
+    width: 100%;
     justify-content: space-around;
-    padding: ${tokens.spacing.xxsmall}px ${tokens.spacing.xxsmall}px;
-    background: ${tokens.colors.white};
-    box-shadow: 0px 2px 12px -10px rgba(0, 0, 0, 0.25);
+    padding: ${tokens.spacing.xxsmall}px 0;
   `
 
   const Nav = styled.nav`
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    max-width: ${tokens.WRAPPER_WIDTH}px;
     column-gap: ${tokens.spacing.small}px;
     row-gap: ${tokens.spacing.small}px;
-    width: 100%;
-    max-width: 600px;
+    padding: ${tokens.spacing.large}px ${tokens.spacing.medium}px;
   `
 
   const NavLink = styled(PlainLink)`
-    width: 100%;
+    margin-right: ${tokens.spacing.large}px;
+    border-radius: ${tokens.BORDER_RADIUS}px;
     text-align: center;
     color: ${tokens.colors.headings};
-    font-size: ${tokens.font.size.h5};
-    padding: ${tokens.spacing.xsmall}px 0;
-    border-radius: ${tokens.BORDER_RADIUS}px;
-    font-weight: 600;
-    margin: 0 2px;
+    font-size: ${tokens.font.size.small};
+    font-weight: 700;
+    text-transform: uppercase;
 
     &:hover {
-      color: ${tokens.colors.headings};
-      background: ${tokens.colors.background};
       text-decoration: none;
+      color: ${tokens.colors.text};
     }
 
     &.${props => props.activeClassName} {
       color: ${tokens.colors.primary};
-      background: ${tokens.colors.primaryMuted};
     }
   `
 
@@ -72,7 +63,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
           Projects
         </NavLink>
         <NavLink to="/about/" activeClassName="active">
-          About me
+          About
         </NavLink>
       </Nav>
     </StyledHeader>

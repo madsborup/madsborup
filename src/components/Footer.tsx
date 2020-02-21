@@ -7,16 +7,17 @@ const Footer: React.FC = () => {
   const StyledFooter = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-top: 1px solid ${tokens.colors.border};
-    max-width: ${tokens.CONTENT_WIDTH}px;
-    margin: ${tokens.spacing.large}px auto 0;
-    padding: ${tokens.spacing.small}px ${tokens.spacing.xsmall}px ${tokens.spacing.xlarge}px;
+    max-width: ${tokens.WRAPPER_WIDTH}px;
+    margin: 0 auto;
+    padding: ${tokens.spacing.large}px ${tokens.spacing.medium}px ${tokens.spacing.large}px;
   `
 
   const Section = styled.div`
     display: flex;
     width: 100%;
-    color: ${tokens.colors.textMuted}; 
+    color: ${tokens.colors.text};
+    font-size: ${tokens.font.size.small};
+    font-weight: 600; 
   `
 
   const LinkSection = styled.div`
@@ -31,7 +32,7 @@ const Footer: React.FC = () => {
 
   return (
     <StyledFooter>
-      <Section>2020, Mads Borup Petersen </Section>
+      <Section>2020 - Mads Borup Petersen </Section>
       <LinkSection>
         <FooterLink href="https://www.linkedin.com/in/madsborup/">LinkedIn</FooterLink>
         <FooterLink href="https://github.com/madsborup">GitHub</FooterLink>

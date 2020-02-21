@@ -1,29 +1,31 @@
 import '../../../static/fonts/inter.css'
 
 const BASELINE = 16;
-const BORDER_RADIUS = 4;
+const BORDER_RADIUS = 8;
+const WRAPPER_WIDTH = 1200;
 const CONTENT_WIDTH = 800;
+const MEDIA_BREAK = 768;
 
 const SCALES = {
   XXSMALL: 0.25,
   XSMALL: 0.5,
   SMALL: 0.75,
   MEDIUM: 1,
-  LARGE: 1.5,
-  XLARGE: 2,
-  XXLARGE: 2.5
+  LARGE: 2,
+  XLARGE: 2.5,
+  XXLARGE: 3
 };
 
 export default {
   colors: {
     white: "#FFFFFF",
     background: "#F3F3F5",
-    border: "#E1E1E5",
+    border: "#E5E6EB",
     hover: "#F8F9F9",
     headings: "#151514",
-    text: "#333",
+    text: "#2f3037",
     textMuted: "#a3a3a3",
-    primary: "#007aff",
+    primary: "#2339fb",
     primaryMuted: "#EAF2FE",
     primaryBorder: "#abc6f1",
     secondary: "#5FAAFC"
@@ -32,7 +34,7 @@ export default {
     family: `'Inter', sans-serif`,
     size: {
       xsmall: `${SCALES.XSMALL + 0.2}rem`,
-      small: `${SCALES.SMALL}rem`,
+      small: `${SCALES.SMALL + 0.1}rem`,
       regular: `${SCALES.MEDIUM}rem`,
       h1: `${SCALES.XXLARGE}rem`,
       h2: `${SCALES.LARGE}rem`,
@@ -53,5 +55,7 @@ export default {
     xlarge: `${SCALES.XLARGE * BASELINE}`
   },
   BORDER_RADIUS,
-  CONTENT_WIDTH
+  WRAPPER_WIDTH,
+  CONTENT_WIDTH,
+  MEDIA_BREAK
 };
