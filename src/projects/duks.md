@@ -2,6 +2,8 @@
 title: Duks
 date: 2020-01-01
 description: A project-management tool for people working in changing teams.
+featuredImage: "../assets/images/projects/duks/front.png"
+featuredLink: https://duks.site
 category: Web Application
 time: 
 - Dec 2019
@@ -23,5 +25,4 @@ about: Duks is a project-management application for people working in changing t
 ---
 import ProjectHeader from "../components/ProjectHeader"
 
-[<- back to projects](/projects/)
 <ProjectHeader project={props.pageContext.frontmatter} />

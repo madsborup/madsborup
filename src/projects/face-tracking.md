@@ -15,11 +15,12 @@ import tracking_video from '../assets/videos/tracking_video.mp4'
 import face_screen from '../assets/images/projects/face_tracking/face_screen.png'
 import face_3 from '../assets/images/projects/face_tracking/face_3.png'
 import face_tracking from '../assets/images/projects/face_tracking/face_tracking.png'
-
 import ProjectHeader from "../components/ProjectHeader"
 
-[<- back to projects](/projects/)
 <ProjectHeader project={props.pageContext.frontmatter} />
-<Image src={face_screen}/>
+
+![](../assets/images/projects/face_tracking/face_screen.png)
+
 <Video src={tracking_video} autoPlay loop muted/>
-<Image src={face_3}/>
+
+![](../assets/images/projects/face_tracking/face_3.png)
