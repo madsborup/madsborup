@@ -10,14 +10,14 @@ const Footer: React.FC = () => {
     max-width: ${tokens.WRAPPER_WIDTH}px;
     margin: 0 auto;
     padding: ${tokens.spacing.large}px ${tokens.spacing.medium}px ${tokens.spacing.large}px;
+    color: ${tokens.colors.textMuted};
   `
 
   const Section = styled.div`
     display: flex;
     width: 100%;
-    color: ${tokens.colors.text};
     font-size: ${tokens.font.size.small};
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
   `
 
