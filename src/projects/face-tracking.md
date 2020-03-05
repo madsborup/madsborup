@@ -3,6 +3,8 @@ title: Face tracking
 date: 2017-01-01
 description: mapping face movements to surface.
 category: Web application
+featuredImage: ../assets/images/projects/bylandskaber/model.png
+featuredLink: /projects/bylandskaber/
 contribution: 
 - Personal project
 tools: 

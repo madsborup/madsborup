@@ -3,11 +3,11 @@ module.exports = {
     title: `Title from siteMetadata`,
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-source-filesystem`,

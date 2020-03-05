@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import tokens from "./designSystem/tokens"
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 import Link from "./designSystem/Link"
 import H2 from "./designSystem/H2"
 import ProjectCard from "./ProjectCard"
@@ -32,11 +32,9 @@ const ProjectShowcase = () => (
                 tools
                 featuredLink
                 featuredImage {
-                  ... on File {
-                    childImageSharp {
-                      fluid {
-                        ...GatsbyImageSharpFluid_withWebp_noBase64
-                      }
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
                     }
                   }
                 }
