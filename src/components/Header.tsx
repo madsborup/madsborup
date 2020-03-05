@@ -30,7 +30,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     text-align: center;
     color: ${tokens.colors.headings};
     font-size: ${tokens.font.size.small};
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
 
     &:hover {

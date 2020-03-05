@@ -24,7 +24,7 @@ export default {
     hover: "#F8F9F9",
     headings: "#151514",
     text: "#2f3037",
-    textMuted: "#a3a3a3",
+    textMuted: "#A1A2AB",
     primary: "#007aff",
     primaryMuted: "#92C3F9",
     primaryBorder: "#E5F2FF",

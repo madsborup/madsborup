@@ -22,10 +22,11 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
     border-radius: ${tokens.spacing.small}px;
     transition: box-shadow 0.2s ease-in-out;
     font-weight: 400;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.14);
 
     &:hover {
       text-decoration: none;
-      box-shadow: 0px 2px 14px 4px rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.14);
     }
   `
 
@@ -56,7 +57,7 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
 
   return (
     <StyledProjectCard href={link}>
-      <Image fluid={image} style={{ height: '200px', backgroundColor: `${tokens.colors.background}` }} />
+      <Image fluid={image} style={{ height: '200px', backgroundColor: `#F7F7FC` }} />
       <Container>
         <H3>{title}</H3>
         <Description>{description}</Description>

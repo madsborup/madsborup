@@ -34,7 +34,7 @@ const ProjectShowcase = () => (
                 featuredImage {
                   childImageSharp {
                     fluid {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }

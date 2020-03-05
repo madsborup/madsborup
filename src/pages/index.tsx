@@ -17,9 +17,10 @@ export default () => {
     max-width: 560px;
 
     h4 {
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.2px;
       margin-bottom: ${tokens.spacing.xxsmall}px;
+      color: ${tokens.colors.text};
     }
 
     p {
