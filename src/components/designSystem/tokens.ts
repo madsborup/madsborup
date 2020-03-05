@@ -19,7 +19,7 @@ const SCALES = {
 export default {
   colors: {
     white: "#FFFFFF",
-    background: "#F3F3F5",
+    background: "#FAFAFB",
     border: "#E5E6EB",
     hover: "#F8F9F9",
     headings: "#151514",

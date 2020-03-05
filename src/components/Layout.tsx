@@ -4,6 +4,7 @@ import tokens from "./designSystem/tokens"
 import DesignSystemProvider from "./designSystem/DesignSystemProvider"
 import Header from "./Header"
 import Footer from "./Footer"
+import Head from './Head'
 import Wrapper from "./Wrapper"
 
 interface Props {
@@ -36,6 +37,7 @@ export default ({
 }: Props): ReactElement<typeof DesignSystemProvider> => {
   return (
     <DesignSystemProvider>
+      <Head />
       <GlobalStyle />
       <Header title="Mads Borup Petersen" />
       <Wrapper>{children}</Wrapper>

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Title from siteMetadata`,
+    title: `Mads Borup`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
@@ -13,6 +13,12 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/assets/videos`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/`,
       },
     },
     {

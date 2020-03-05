@@ -5,6 +5,7 @@ import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 import DesignSystemProvider from "./designSystem/DesignSystemProvider"
 import Link from "./designSystem/Link"
+import Head from './Head'
 import Header from "./Header"
 import Footer from "./Footer"
 
@@ -49,11 +50,14 @@ export default ({
 }: Props): ReactElement<typeof DesignSystemProvider> => {
   return (
     <DesignSystemProvider>
+      <Head />
       <GlobalStyle />
       <Header title="Mads Borup Petersen" />
       <Wrapper>
         <Content>
-          <Link to="/projects/" withArrow="backward">back to projects</Link>
+          <Link to="/projects/" withArrow="backward">
+            back to projects
+          </Link>
           {children}
         </Content>
       </Wrapper>
