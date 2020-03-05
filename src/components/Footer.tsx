@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
 
   return (
     <StyledFooter>
-      <Section>2020, Mads Borup Petersen </Section>
+      <Section>2020 - Mads Borup Petersen </Section>
       <LinkSection>
         <FooterLink href="https://www.linkedin.com/in/madsborup/">LinkedIn</FooterLink>
         <FooterLink href="https://github.com/madsborup">GitHub</FooterLink>

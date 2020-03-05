@@ -34,7 +34,6 @@ const Image: React.FC<Props> = ({ src, maxWidth, align, children }: Props) => {
   const Container = styled.div<ContainerProps>`
     display: flex;
     flex-direction: column;
-    background: ${tokens.colors.border};
     margin-bottom: ${({ align }) => align && `${tokens.spacing.medium}px`};
     margin: ${({ align }) => handleMargin(align)};
     float: ${({ align }) => align};
@@ -44,6 +43,10 @@ const Image: React.FC<Props> = ({ src, maxWidth, align, children }: Props) => {
     max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "100%")};
     margin: 0 auto;
     order: 1;
+
+    @media (max-width: ${tokens.MEDIA_BREAK}px) {
+      max-width: 100%;
+    }
   `
 
   const Caption = styled.span`

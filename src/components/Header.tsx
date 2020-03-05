@@ -29,9 +29,8 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     border-radius: ${tokens.BORDER_RADIUS}px;
     text-align: center;
     color: ${tokens.colors.headings};
-    font-size: ${tokens.font.size.small};
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: ${tokens.font.size.h5};
+    font-weight: 600;
 
     &:hover {
       text-decoration: none;

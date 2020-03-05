@@ -5,5 +5,5 @@ export default styled.hr`
   color: ${tokens.colors.border};
   border: none;
   border-top: 1px solid ${tokens.colors.border};
-  margin-bottom: ${tokens.spacing.medium}px;
+  margin-bottom: ${tokens.spacing.large}px;
 `;

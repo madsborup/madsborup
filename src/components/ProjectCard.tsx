@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 import Link from "./designSystem/Link"
+import Tag from './designSystem/Tag'
 import H3 from "./designSystem/H3"
 import Img, { FluidObject } from "gatsby-image"
 
@@ -18,13 +19,13 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
     display: flex;
     flex-direction: column;
     background: ${tokens.colors.white};
-    border-radius: ${tokens.BORDER_RADIUS}px;
+    border-radius: ${tokens.spacing.small}px;
     transition: box-shadow 0.2s ease-in-out;
     font-weight: 400;
 
     &:hover {
       text-decoration: none;
-      box-shadow: 0px 2px 16px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 2px 14px 4px rgba(0, 0, 0, 0.12);
     }
   `
 
@@ -34,10 +35,16 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
 
   const Container = styled.div`
     padding: ${tokens.spacing.medium}px;
+
+    h3 {
+      margin-bottom: ${tokens.spacing.xsmall}px;
+    }
   `
 
   const Description = styled.div`
     color: ${tokens.colors.text};
+    font-size: ${tokens.font.size.h4};
+    font-weight: 400;
   `
 
   const Tools = styled.div`
@@ -47,28 +54,13 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
     margin-top: ${tokens.spacing.medium}px;
   `
 
-  const Tag = styled.div`
-    background: ${tokens.colors.background};
-    color: ${tokens.colors.text};
-    font-size: ${tokens.font.size.small};
-    padding: 0 ${tokens.spacing.xsmall}px;
-    margin-right: ${tokens.spacing.xxsmall}px;
-    margin-bottom: ${tokens.spacing.xxsmall}px;
-    border-radius: ${tokens.BORDER_RADIUS}px;
-    font-weight: 500;
-  `
-
   return (
     <StyledProjectCard href={link}>
-      <Image fluid={image} />
+      <Image fluid={image} style={{ height: '200px', backgroundColor: `${tokens.colors.background}` }} />
       <Container>
         <H3>{title}</H3>
         <Description>{description}</Description>
-        <Tools>
-          {tools.map((tool, i) => {
-            return <Tag key={i}>{tool}</Tag>
-          })}
-        </Tools>
+
       </Container>
     </StyledProjectCard>
   )

@@ -1,6 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import tokens from "./designSystem/tokens"
 import ProjectLink from "./ProjectLink"
 import H1 from "./designSystem/H1"
@@ -8,7 +7,11 @@ import H2 from "./designSystem/H2"
 import styled from "styled-components"
 
 const List = styled.div`
-  margin-bottom: calc(${tokens.spacing.large}px * 2);
+  margin-bottom: ${tokens.spacing.xlarge}px;
+
+  h1 {
+    margin-bottom: ${tokens.spacing.medium}px;
+  }
 `
 
 const ProjectsList = () => (

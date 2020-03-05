@@ -9,16 +9,15 @@ import ProjectCard from "./ProjectCard"
 
 const StyledProjectShowcase = styled.div`
   margin-top: ${tokens.spacing.medium}px;
-  max-width: 100%;
   width: 100%;
 `
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
   grid-gap: ${tokens.spacing.medium}px;
-  margin-top: ${tokens.spacing.large}px;
+  margin-top: ${tokens.spacing.medium}px;
 `
 
 const ProjectShowcase = () => (
@@ -48,16 +47,23 @@ const ProjectShowcase = () => (
     `}
     render={data => (
       <React.Fragment>
-        <Section>
-          <H2>Projects</H2>
-          <Link to="/projects/">View all projects -></Link>
-        </Section>
+        <H2>Projects</H2>
+        <Link to="/projects/" withArrow="onward">
+          View all projects
+        </Link>
+
         <StyledProjectShowcase>
           <Container>
             {data.allMdx.edges.map((edge, i) => {
-              const { title, description, tools, featuredLink, featuredImage} = edge.node.frontmatter
+              const {
+                title,
+                description,
+                tools,
+                featuredLink,
+                featuredImage,
+              } = edge.node.frontmatter
 
-              console.log(featuredImage);
+              console.log(featuredImage)
               return (
                 <ProjectCard
                   title={title}

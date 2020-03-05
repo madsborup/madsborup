@@ -4,5 +4,7 @@ import tokens from './tokens'
 export default styled.h3`
   font-size: ${tokens.font.size.h3};
   color: ${tokens.colors.headings};
-  margin: ${tokens.spacing.xsmall}px 0;
+  margin-bottom: ${tokens.spacing.small}px;
+  line-height: 1;
+  font-weight: 700;
 `;

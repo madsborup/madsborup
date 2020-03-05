@@ -4,7 +4,7 @@ import Img, { FluidObject, GatsbyImageProps } from "gatsby-image"
 import tokens from "./tokens"
 
 
-const Image = (props: GatsbyImageProps) => {
+const Image = (props) => {
   const StyledImage = styled(Img)``
 
   const Wrapper = styled.figure`

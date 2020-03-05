@@ -7,7 +7,7 @@ const StyledSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: ${tokens.spacing.xlarge}px;
+  margin-bottom: ${tokens.spacing.xlarge}px;
   width: 100%;
   max-width: ${tokens.CONTENT_WIDTH}px;
 `;

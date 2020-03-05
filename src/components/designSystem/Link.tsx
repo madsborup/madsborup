@@ -39,7 +39,7 @@ const ArrowBackward = styled.span`
 const InternalLink = styled(GatsbyLink)<InternalLinkProps>`
   color: ${({ withArrow }) =>
     withArrow === "backward"
-      ? `${tokens.colors.primaryMuted}`
+      ? `${tokens.colors.primary}`
       : `${tokens.colors.primary}`};
   text-decoration: none;
   font-size: ${tokens.font.size.regular};

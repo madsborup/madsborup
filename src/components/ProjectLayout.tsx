@@ -53,7 +53,7 @@ export default ({
       <Header title="Mads Borup Petersen" />
       <Wrapper>
         <Content>
-          <Link to="/projects/"> ← back to projects</Link>
+          <Link to="/projects/" withArrow="backward">back to projects</Link>
           {children}
         </Content>
       </Wrapper>

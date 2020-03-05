@@ -25,10 +25,11 @@ export default {
     headings: "#151514",
     text: "#2f3037",
     textMuted: "#a3a3a3",
-    primary: "#2339fb",
-    primaryMuted: "#EAF2FE",
-    primaryBorder: "#abc6f1",
-    secondary: "#5FAAFC"
+    primary: "#007aff",
+    primaryMuted: "#92C3F9",
+    primaryBorder: "#E5F2FF",
+    secondary: "#2D527E",
+    secondaryMuted: "#EAF4FE"
   },
   font: {
     family: `'Inter', sans-serif`,
@@ -38,7 +39,7 @@ export default {
       regular: `${SCALES.MEDIUM}rem`,
       h1: `${SCALES.XXLARGE}rem`,
       h2: `${SCALES.LARGE}rem`,
-      h3: `${SCALES.MEDIUM + 0.25}rem`,
+      h3: `${SCALES.MEDIUM + 0.35}rem`,
       h4: `${SCALES.MEDIUM + 0.05}rem`,
       h5: `${SCALES.SMALL + 0.2}rem`
     },

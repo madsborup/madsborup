@@ -3,6 +3,7 @@ import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 import H1 from "./designSystem/H1"
 import Link from "./designSystem/Link"
+import Tag from "./designSystem/Tag"
 import { ProjectData } from "../interfaces/Project"
 
 interface Props {
@@ -24,7 +25,7 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
   const StyledProjectHeader = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: ${tokens.spacing.xlarge}px;
+    margin: ${tokens.spacing.small}px 0 ${tokens.spacing.xlarge}px;
     color: ${tokens.colors.headings};
   `
 
@@ -62,27 +63,16 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
     color: ${tokens.colors.textMuted};
   `
 
-  const Tag = styled.div`
-    background: ${tokens.colors.border};
-    color: ${tokens.colors.text};
-    padding: 0 ${tokens.spacing.xsmall}px;
-    margin-right: ${tokens.spacing.xxsmall}px;
-    margin-bottom: ${tokens.spacing.xxsmall}px;
-    border-radius: 4px;
-  `
-
   const MetaContainer = styled.div`
     display: grid;
     grid-template-columns: 0.7fr 1fr 2fr;
     grid-gap: ${tokens.spacing.medium}px;
     width: 100%;
-    margin-bottom: ${tokens.spacing.medium}px;
     border-bottom: 1px solid ${tokens.colors.border};
   `
 
   return (
     <StyledProjectHeader>
-      {category && <Category>{category}</Category>}
       <Title>{title}</Title>
       <Tools>
         {tools.map(tool => (
@@ -115,12 +105,6 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
               ))}
             </Row>
           )}
-        </Column>
-        <Column>
-          <Row>
-            <Heading>About</Heading>
-            {about}
-          </Row>
           <Row>
             {outcome && (
               <React.Fragment>
@@ -128,6 +112,12 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
                 {outcome}
               </React.Fragment>
             )}
+          </Row>
+        </Column>
+        <Column>
+          <Row>
+            <Heading>About</Heading>
+            {about}
           </Row>
         </Column>
       </MetaContainer>

@@ -3,7 +3,7 @@ title: "Story Blocks"
 date: 2017-12-01
 description: A tangible language for teaching Computational Thinking.
 category: Physical Product
-featuredImage: "../assets/images/projects/story_blocks/character.png"
+featuredImage: "../assets/images/projects/story_blocks/hub.png"
 featuredLink: /projects/story-blocks/
 time: 
 - 2017
@@ -23,10 +23,10 @@ import ProjectHeader from "../components/ProjectHeader"
 
 <ProjectHeader project={props.pageContext.frontmatter} />
 
-## Challenge 
+### Challenge 
 Programming is being introduced in the Danish primary school, but programming is complex and inaccessible and many teachers find it hard to pick it up as yet another thing they have to learn. Additionally teachers often experience difficulties keeping the students interested when the excitement of existing digital tools has worn off.
 
-## Concept
+### Concept
 With Story Blocks students can create small naratives around a scene (like a doll house). Students can then "program" the behavior of the scene by connecting blocks with boolean conditions to hubs that control specific parts of the scene. Students can make logical AND conditions by connecting blocks together in the same hub input, and logical OR conditions by connecting blocks to seperate hub inputs. The programmed behaviour can then be tested and stories can be acted out stories by playing with actors (dolls) in the scene.
 
 ![Hub (center) with blocks.](../assets/images/projects/story_blocks/hub.png)
