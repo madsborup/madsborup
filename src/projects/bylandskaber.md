@@ -1,16 +1,16 @@
 ---
-title: "Bylandskaber"
+title: Bylandskaber
 date: 2017-01-01
-description: "3D-printed miniatures of parts of Copenhagen using open source data."
-featuredImage: "../assets/images/projects/bylandskaber/model.png"
+description: 3D-printed miniatures of parts of Copenhagen using open source data.
+featuredImage: ../assets/images/projects/bylandskaber/model.png
 featuredLink: /projects/bylandskaber/
 time:
-- 2018
+- "2018"
 contribution: 
-- "Personal project"
+- Personal project
 tools: 
-- "Rhino 3D"
-about: "Bylandskaber are 15x15cm 3D-printed models of parts of Copenhagen. Modelled based on open-source data from opendata.dk. Printed from matte white PLA."
+- Rhino 3D
+about: Bylandskaber are 15x15cm 3D-printed models of parts of Copenhagen. Modelled based on open-source data from opendata.dk. Printed from matte white PLA.
 sideProject: true
 ---
 import ProjectHeader from "../components/ProjectHeader"

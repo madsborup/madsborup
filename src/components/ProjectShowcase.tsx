@@ -8,7 +8,6 @@ import H2 from "./designSystem/H2"
 import ProjectCard from "./ProjectCard"
 
 const StyledProjectShowcase = styled.div`
-  margin-top: ${tokens.spacing.medium}px;
   width: 100%;
 `
 
@@ -51,7 +50,6 @@ const ProjectShowcase = () => (
         <Link to="/projects/" withArrow="onward">
           View all projects
         </Link>
-
         <StyledProjectShowcase>
           <Container>
             {data.allMdx.edges.map((edge, i) => {

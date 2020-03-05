@@ -1,14 +1,13 @@
 ---
-title: "Face tracking"
+title: Face tracking
 date: 2017-01-01
-description: "mapping face movements to surface."
-category: "Web application"
+description: mapping face movements to surface.
+category: Web application
 contribution: 
-- "Personal project"
+- Personal project
 tools: 
-- "p5.js"
+- p5.js
 about: One day challenge of mapping face movements to a surface using the p5.js face tracking library. Inspired by Jim Campbell's lo-fi installations.
-
 sideProject: true
 ---
 import tracking_video from '../assets/videos/tracking_video.mp4'

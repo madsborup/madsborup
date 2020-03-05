@@ -1,21 +1,21 @@
 ---
-title: "Ro På"
+title: Ro På
 date: 2018-07-01
 description: A conversational UI for interaction with Smart City data.
 category: Web Application
-featuredImage: "../assets/images/projects/ropå/monti_app.png"
+featuredImage: ../assets/images/projects/ropå/monti_app.png
 featuredLink: /projects/ropå/
 time: 
-- 2018
+- "2018"
 - 4 months
 contribution: 
-- "Problem scoping"
-- "Prototyping"
-- "User research"
+- Problem scoping
+- Prototyping
+- User research
 tools: 
-- "React"
-- "Adobe UX"
-about: "RoPå was a Bachelor's project in collaboration with Montem (montem.io). In this project we proposed a solution for increasing awareness of the city environment through interaction with data collected from Montem's Smart City probe network."
+- React
+- Adobe UX
+about: RoPå was a Bachelor's project in collaboration with Montem (montem.io). In this project we proposed a solution for increasing awareness of the city environment through interaction with data collected from Montem's Smart City probe network.
 outcome: A prototype React app with a CUI
 ---
 import ProjectHeader from "../components/ProjectHeader"

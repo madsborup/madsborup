@@ -2,11 +2,11 @@
 title: Duks
 date: 2020-01-01
 description: A simple project management tool for people working in changing teams.
-featuredImage: "../assets/images/projects/duks/front.png"
+featuredImage: ../assets/images/projects/duks/front.png
 featuredLink: /projects/duks/
 category: Web Application
 time: 
-- Dec 2019
+- "Dec 2019"
 - -> on going
 links: 
 - url: https://duks.site

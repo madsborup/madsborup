@@ -1,12 +1,12 @@
 ---
-title: "Story Blocks"
+title: Story Blocks
 date: 2017-12-01
 description: A tangible language for teaching Computational Thinking.
 category: Physical Product
-featuredImage: "../assets/images/projects/story_blocks/hub.png"
+featuredImage: ../assets/images/projects/story_blocks/hub.png
 featuredLink: /projects/story-blocks/
 time: 
-- 2017
+- "2017"
 - 4 months
 contribution: 
 - Research
