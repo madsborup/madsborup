@@ -27,8 +27,10 @@ const Header: React.FC<Props> = ({ title }: Props) => {
   const NavLink = styled(PlainLink)`
     margin-right: ${tokens.spacing.large}px;
     border-radius: ${tokens.BORDER_RADIUS}px;
+    padding: 0;
+    background: none;
     text-align: center;
-    color: ${tokens.colors.headings};
+    color: ${tokens.colors.textMuted};
     font-size: ${tokens.font.size.small};
     font-weight: 700;
     text-transform: uppercase;

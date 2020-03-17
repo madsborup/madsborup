@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 import Link from "./designSystem/Link"
-import Tag from './designSystem/Tag'
 import H3 from "./designSystem/H3"
 import Img, { FluidObject } from "gatsby-image"
 
@@ -18,34 +17,37 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
   const StyledProjectCard = styled(Link)`
     display: flex;
     flex-direction: column;
-    background: ${tokens.colors.white};
     border-radius: ${tokens.spacing.small}px;
     transition: box-shadow 0.2s ease-in-out;
     font-weight: 400;
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.14);
+    overflow: hidden;
+    box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.08);
 
     &:hover {
       text-decoration: none;
-      box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.14);
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
     }
   `
 
   const Image = styled(Img)`
-    border-radius: ${tokens.BORDER_RADIUS}px ${tokens.BORDER_RADIUS}px 0 0;
+
   `
 
   const Container = styled.div`
-    padding: ${tokens.spacing.medium}px;
+    padding: 18px;
+    color: ${tokens.colors.headings};
+    background: ${tokens.colors.white};
 
     h3 {
-      margin-bottom: ${tokens.spacing.xsmall}px;
+      margin-bottom: ${tokens.spacing.xsmall}px; 
     }
   `
 
   const Description = styled.div`
-    color: ${tokens.colors.text};
     font-size: ${tokens.font.size.h4};
     font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: ${tokens.spacing.medium}px;
   `
 
   const Tools = styled.div`
@@ -57,11 +59,11 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
 
   return (
     <StyledProjectCard href={link}>
-      <Image fluid={image} style={{ height: '200px', backgroundColor: `#F7F7FC` }} />
+      <Image fluid={image} style={{ height: '200px', backgroundColor: `#FAFAFB` }} />
       <Container>
         <H3>{title}</H3>
         <Description>{description}</Description>
-
+        <Link to={link} withArrow='onward'>Go to project</Link>
       </Container>
     </StyledProjectCard>
   )

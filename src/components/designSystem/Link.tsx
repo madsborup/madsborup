@@ -8,6 +8,7 @@ interface InternalLinkProps {
   activeClassName?: string
   partiallyActive?: boolean
   withArrow?: "onward" | "backward"
+  primary?: boolean;
 }
 
 interface ExternalLinkProps {
@@ -23,39 +24,38 @@ interface CommonLinkProps {
 type LinkProps = CommonLinkProps & (InternalLinkProps | ExternalLinkProps)
 
 const ArrowOnward = styled.span`
-  color: ${tokens.colors.primaryMuted};
+  color: ${tokens.colors.textMuted};
   margin-left: ${tokens.spacing.xsmall}px;
   transition: transform 0.2s ease-in-out;
   display: inline-block;
 `
 
 const ArrowBackward = styled.span`
-  color: ${tokens.colors.primaryMuted};
+  color: ${tokens.colors.textMuted};
   margin-right: ${tokens.spacing.xsmall}px;
   transition: transform 0.2s ease-in-out;
   display: inline-block;
 `
 
 const InternalLink = styled(GatsbyLink)<InternalLinkProps>`
-  color: ${({ withArrow }) =>
-    withArrow === "backward"
-      ? `${tokens.colors.primary}`
-      : `${tokens.colors.primary}`};
+  color: ${({ primary }) => primary ? tokens.colors.white : tokens.colors.headings};
+  background: ${({ primary }) => primary ? tokens.colors.primary : 'none'};
+  padding: ${({ primary }) => primary && `${tokens.spacing.xsmall}px ${tokens.spacing.large}px`};
+  border-radius: 20px;
   text-decoration: none;
   font-size: ${tokens.font.size.regular};
-  font-weight: 500;
+  font-weight: 600;
 
   &:hover {
     text-decoration: ${({ withArrow }) => (withArrow ? "none" : "underline")};
-    color: ${tokens.colors.primary};
 
     ${ArrowOnward} {
-      color: ${tokens.colors.primary};
+      color: ${({ primary }) => primary ? tokens.colors.white : tokens.colors.primary};
       transform: translateX(8px);
     }
 
     ${ArrowBackward} {
-      color: ${tokens.colors.primary};
+      color: ${({ primary }) => primary ? tokens.colors.white : tokens.colors.primary};
       transform: translateX(-8px);
     }
   }
@@ -79,6 +79,7 @@ const Link: React.FC<LinkProps> = ({
   activeClassName,
   partiallyActive,
   withArrow,
+  primary,
   children,
 }: LinkProps): ReactElement<typeof GatsbyLink | HTMLAnchorElement> => {
   return to ? (
@@ -88,6 +89,7 @@ const Link: React.FC<LinkProps> = ({
       className={className}
       partiallyActive={partiallyActive}
       withArrow={withArrow}
+      primary={primary}
     >
       {withArrow === "backward" && <ArrowBackward>←</ArrowBackward>}
       {children}

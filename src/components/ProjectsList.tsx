@@ -10,7 +10,7 @@ const List = styled.div`
   margin-bottom: ${tokens.spacing.xlarge}px;
 
   h1 {
-    margin-bottom: ${tokens.spacing.medium}px;
+    margin-bottom: ${tokens.spacing.large}px;
   }
 `
 

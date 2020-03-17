@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  margin-top: ${tokens.spacing.xlarge}px;
+  margin-top: ${tokens.spacing.large}px;
 `
 
 const GlobalStyle = createGlobalStyle`

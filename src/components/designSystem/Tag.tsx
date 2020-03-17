@@ -6,7 +6,7 @@ export default styled.div`
   margin-right: ${tokens.spacing.xxsmall}px;
   margin-bottom: ${tokens.spacing.xxsmall}px;
   border-radius: 2px;
-  background: ${tokens.colors.primary};
+  background: ${tokens.colors.headings};
   color: ${tokens.colors.white};
   font-size: ${tokens.font.size.small};
   font-weight: 500;

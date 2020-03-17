@@ -3,10 +3,7 @@ import styled from "styled-components"
 import tokens from "../components/designSystem/tokens"
 import Layout from "../components/Layout"
 import ProjectShowcase from "../components/ProjectShowcase"
-import H1 from "../components/designSystem/H1"
 import H4 from "../components/designSystem/H4"
-import P from "../components/designSystem/P"
-import Link from "../components/designSystem/Link"
 import Section from "../components/Section"
 
 export default () => {
@@ -14,13 +11,14 @@ export default () => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: ${tokens.spacing.large}px 0;
     max-width: 560px;
 
     h4 {
       font-weight: 600;
       letter-spacing: 0.2px;
       margin-bottom: ${tokens.spacing.xxsmall}px;
-      color: ${tokens.colors.text};
+      color: ${tokens.colors.headings};
     }
 
     p {
@@ -38,7 +36,6 @@ export default () => {
             I'm a front-end developer-in-progress with a BSc in Interaction
             Design. Currently learning what's working on the web.
           </p>
-          <Link to="/about/" withArrow="onward">About me</Link>
         </Greeting>
       </Section>
       <ProjectShowcase />

@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     max-width: ${tokens.WRAPPER_WIDTH}px;
     margin: 0 auto;
     padding: ${tokens.spacing.large}px ${tokens.spacing.medium}px ${tokens.spacing.large}px;
-    color: ${tokens.colors.textMuted};
+    color: ${tokens.colors.headings};
   `
 
   const Section = styled.div`
