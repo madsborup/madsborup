@@ -26,6 +26,12 @@ import ProjectHeader from "../components/ProjectHeader"
 ### Challenge 
 Programming is being introduced in the Danish primary school, but programming is complex and inaccessible and many teachers find it hard to pick it up as yet another thing they have to learn. Additionally teachers often experience difficulties keeping the students interested when the excitement of existing digital tools has worn off.
 
+## Project
+
+Story Blocks was made as part of a university project. 
+Designed in collaboration with a front-runner teacher in the implementation of "Teknologiforståelse" and his students at a Danish primary school. 
+
+
 ### Concept
 With Story Blocks students can create small naratives around a scene (like a doll house). Students can then "program" the behavior of the scene by connecting blocks with boolean conditions to hubs that control specific parts of the scene. Students can make logical AND conditions by connecting blocks together in the same hub input, and logical OR conditions by connecting blocks to seperate hub inputs. The programmed behaviour can then be tested and stories can be acted out stories by playing with actors (dolls) in the scene.
 
@@ -38,7 +44,7 @@ An example scenario could be that the students have programmed the door to open 
 
 ![A character being used in the house scene.](../assets/images/projects/story_blocks/character.png)
 
-![Early test with 2nd grade students using a cardboard prototype (left). Test with functioning prototype (right).](../assets/images/projects/story_blocks/test.png)
+![Early evaluation with 2nd grade students at a Primary School using a cardboard prototype (left). A functional prototype was later developed and evaluated (right).](../assets/images/projects/story_blocks/test.png)
 
 ---
 
