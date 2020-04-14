@@ -33,7 +33,7 @@ export default () => {
         <Greeting>
           <H4>Mads Borup Petersen</H4>
           <p>
-            I'm a front-end developer-in-progress with a BSc in Interaction
+            I'm a frontend developer-in-progress with a BSc in Interaction
             Design. Currently learning what's working on the web.
           </p>
         </Greeting>
