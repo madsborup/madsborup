@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Mads Borup`,
+    title: `Mads Borup Petersen`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
