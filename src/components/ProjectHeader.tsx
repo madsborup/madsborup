@@ -10,22 +10,21 @@ interface Props {
   project: ProjectData
 }
 
-const ProjectHeader: React.FC<Props> = (props: Props) => {
+const ProjectHeader: React.FC<Props> = ({project}: Props) => {
   const {
     title,
-    category,
     links,
     contribution,
     time,
     about,
     tools,
     outcome,
-  } = props.project
+  } = project
 
   const StyledProjectHeader = styled.div`
     display: flex;
     flex-direction: column;
-    margin: ${tokens.spacing.small}px 0 ${tokens.spacing.xlarge}px;
+    margin: ${tokens.spacing.small}px 0 ${tokens.spacing.large}px;
     color: ${tokens.colors.headings};
   `
 
@@ -52,14 +51,9 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
     flex-wrap: wrap;
     margin-bottom: ${tokens.spacing.small}px;
     padding-bottom: ${tokens.spacing.small}px;
-    border-bottom: 1px solid ${tokens.colors.border};
   `
 
   const Heading = styled.span`
-    color: ${tokens.colors.textMuted};
-  `
-
-  const Category = styled.span`
     color: ${tokens.colors.textMuted};
   `
 
@@ -68,7 +62,9 @@ const ProjectHeader: React.FC<Props> = (props: Props) => {
     grid-template-columns: 0.7fr 1fr 2fr;
     grid-gap: ${tokens.spacing.medium}px;
     width: 100%;
-    border-bottom: 1px solid ${tokens.colors.border};
+    padding: ${tokens.spacing.small}px;
+    background: #F9F5F1;
+    border-radius: 2px;
   `
 
   return (

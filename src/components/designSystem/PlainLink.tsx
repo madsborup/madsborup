@@ -6,6 +6,5 @@ export default styled(Link)`
   color: ${tokens.colors.text};
 
   &:hover {
-    color: ${tokens.colors.secondary};
   }
 `;

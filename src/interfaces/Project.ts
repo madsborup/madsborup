@@ -7,6 +7,7 @@ export interface ProjectData {
   links?: {url: string; label: string}[]
   featuredImage: FluidObject
   featuredLink: string
+  accent?: string
   contribution?: string[]
   time?: string[]
   about: string

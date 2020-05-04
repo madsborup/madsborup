@@ -4,6 +4,7 @@ import tokens from "../components/designSystem/tokens"
 import Layout from "../components/Layout"
 import ProjectShowcase from "../components/ProjectShowcase"
 import H4 from "../components/designSystem/H4"
+import H1 from '../components/designSystem/H1'
 import Section from "../components/Section"
 
 export default () => {
@@ -29,6 +30,7 @@ export default () => {
     <Layout>
       <Section>
         <Greeting>
+          <H1>👾</H1>
           <H4>Hi, I'm Mads.</H4>
           <p>
             I'm a developer with a BSc in Interaction

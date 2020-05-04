@@ -56,7 +56,7 @@ export default ({
       <Wrapper>
         <Content>
           <Link to="/projects/" withArrow="backward">
-            back to projects
+            all projects
           </Link>
           {children}
         </Content>

@@ -3,7 +3,7 @@ import '../../../static/fonts/inter.css'
 const BASELINE = 16;
 const BORDER_RADIUS = 8;
 const WRAPPER_WIDTH = 1200;
-const CONTENT_WIDTH = 800;
+const CONTENT_WIDTH = 960;
 const MEDIA_BREAK = 768;
 
 const SCALES = {
@@ -12,16 +12,15 @@ const SCALES = {
   SMALL: 0.75,
   MEDIUM: 1,
   LARGE: 2,
-  XLARGE: 2.5,
-  XXLARGE: 3
+  XLARGE: 3,
 };
 
 export default {
   colors: {
     white: "#FFFFFF",
-    background: "#F2F2F2",
-    border: "#ebecf0",
-    hover: "#F8F9F9",
+    background: "#FFFEFC",
+    border: "#E5E4E2",
+    hover: "#f5f4f2",
     headings: "#000000",
     headingsMuted: "3b3578",
     text: "#2f3037",
@@ -29,7 +28,7 @@ export default {
     primary: "#000000",
     primaryMuted: "#92C3F9",
     primaryBorder: "#E5F2FF",
-    secondary: "#2D527E",
+    secondary: "#7B9D7C",
     secondaryMuted: "#EAF4FE"
   },
   font: {
@@ -38,7 +37,7 @@ export default {
       xsmall: `${SCALES.XSMALL + 0.2}rem`,
       small: `${SCALES.SMALL + 0.1}rem`,
       regular: `${SCALES.MEDIUM}rem`,
-      h1: `${SCALES.XXLARGE}rem`,
+      h1: `${SCALES.XLARGE}rem`,
       h2: `${SCALES.LARGE}rem`,
       h3: `${SCALES.MEDIUM + 0.35}rem`,
       h4: `${SCALES.MEDIUM + 0.05}rem`,

@@ -28,19 +28,17 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     grid-auto-columns: min-content;
     grid-auto-flow: column;
     justify-content: flex-end;
-    grid-gap: ${tokens.spacing.medium}px;
+    grid-gap: ${tokens.spacing.large}px;
   `
 
   const NavLink = styled(PlainLink)`
     padding: 0;
     background: none;
     text-align: center;
-    color: ${tokens.colors.textMuted};
     border-radius: ${tokens.BORDER_RADIUS}px;
-    font-size: ${tokens.font.size.small};
-    font-weight: 700;
+    font-size: ${tokens.font.size.regular};
+    font-weight: 600;
     letter-spacing: 0.2px;
-    text-transform: uppercase;
 
     &:hover {
       text-decoration: none;

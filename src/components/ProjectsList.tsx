@@ -1,17 +1,23 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import tokens from "./designSystem/tokens"
-import ProjectLink from "./ProjectLink"
-import H1 from "./designSystem/H1"
-import H2 from "./designSystem/H2"
+import ProjectCard from "./ProjectCard"
+import H3 from './designSystem/H3'
 import styled from "styled-components"
 
-const List = styled.div`
-  margin-bottom: ${tokens.spacing.xlarge}px;
+const ListHeader = styled(H3)`
+  padding-bottom: ${tokens.spacing.medium}px;
+  margin-bottom: ${tokens.spacing.medium}px;
+  border-bottom: 1px solid ${tokens.colors.border};
+  width: 100%;
+`
 
-  h1 {
-    margin-bottom: ${tokens.spacing.large}px;
-  }
+const List = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  grid-gap: ${tokens.spacing.medium}px;
+  margin-bottom: ${tokens.spacing.xlarge}px;
 `
 
 const ProjectsList = () => (
@@ -24,6 +30,16 @@ const ProjectsList = () => (
               frontmatter {
                 title
                 description
+                tools
+                featuredLink
+                accent
+                featuredImage {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
                 sideProject
                 date(formatString: "dddd, MMMM Do YYYY")
               }
@@ -37,34 +53,45 @@ const ProjectsList = () => (
     `}
     render={data => (
       <React.Fragment>
+        <ListHeader>Projects</ListHeader>
         <List>
-          <H1>Projects</H1>
           {data.allMdx.edges
             .filter(edge => !edge.node.frontmatter.sideProject)
             .map((edge, i) => {
-              let project = edge.node
+              const project = edge.node
 
               return (
-                <ProjectLink
-                  to={project.fields.slug}
+                <ProjectCard
                   title={project.frontmatter.title}
                   description={project.frontmatter.description}
+                  image={
+                    project.frontmatter.featuredImage.childImageSharp.fluid
+                  }
+                  tools={project.frontmatter.tools}
+                  link={project.frontmatter.featuredLink}
                   key={i}
+                  imageBgColor={project.frontmatter.accent}
                 />
               )
             })}
         </List>
+        <ListHeader>Other</ListHeader>
         <List>
-          <H2>Other</H2>
           {data.allMdx.edges
             .filter(project => project.node.frontmatter.sideProject)
-            .map((project, i) => {
+            .map((edge, i) => {
+              const project = edge.node
               return (
-                <ProjectLink
-                  to={project.node.fields.slug}
-                  title={project.node.frontmatter.title}
-                  description={project.node.frontmatter.description}
+                <ProjectCard
+                  title={project.frontmatter.title}
+                  description={project.frontmatter.description}
+                  image={
+                    project.frontmatter.featuredImage.childImageSharp.fluid
+                  }
+                  tools={project.frontmatter.tools}
+                  link={project.frontmatter.featuredLink}
                   key={i}
+                  imageBgColor={project.frontmatter.accent}
                 />
               )
             })}

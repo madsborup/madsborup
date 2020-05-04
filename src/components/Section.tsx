@@ -5,8 +5,6 @@ import tokens from './designSystem/tokens'
 const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
   margin-bottom: ${tokens.spacing.xlarge}px;
   width: 100%;
   max-width: ${tokens.CONTENT_WIDTH}px;
