@@ -11,13 +11,11 @@ export default () => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: ${tokens.spacing.large}px 0;
+    margin: ${tokens.spacing.medium}px 0 0;
     max-width: 560px;
 
-    h4 {
+    ${H4} {
       font-weight: 600;
-      letter-spacing: 0.2px;
-      margin-bottom: ${tokens.spacing.xxsmall}px;
       color: ${tokens.colors.headings};
     }
 
@@ -31,9 +29,9 @@ export default () => {
     <Layout>
       <Section>
         <Greeting>
-          <H4>Mads Borup Petersen</H4>
+          <H4>Hi, I'm Mads.</H4>
           <p>
-            I'm a frontend developer-in-progress with a BSc in Interaction
+            I'm a developer with a BSc in Interaction
             Design. Currently learning what's working on the web.
           </p>
         </Greeting>

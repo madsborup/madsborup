@@ -16,23 +16,30 @@ const Header: React.FC<Props> = ({ title }: Props) => {
   `
 
   const Nav = styled.nav`
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content 1fr;
     width: 100%;
     max-width: ${tokens.WRAPPER_WIDTH}px;
-    column-gap: ${tokens.spacing.small}px;
-    row-gap: ${tokens.spacing.small}px;
     padding: ${tokens.spacing.large}px ${tokens.spacing.medium}px;
   `
 
+  const LinkContainer = styled.div`
+    display: grid;
+    grid-auto-columns: min-content;
+    grid-auto-flow: column;
+    justify-content: flex-end;
+    grid-gap: ${tokens.spacing.medium}px;
+  `
+
   const NavLink = styled(PlainLink)`
-    margin-right: ${tokens.spacing.large}px;
-    border-radius: ${tokens.BORDER_RADIUS}px;
     padding: 0;
     background: none;
     text-align: center;
     color: ${tokens.colors.textMuted};
+    border-radius: ${tokens.BORDER_RADIUS}px;
     font-size: ${tokens.font.size.small};
     font-weight: 700;
+    letter-spacing: 0.2px;
     text-transform: uppercase;
 
     &:hover {
@@ -45,28 +52,24 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     }
   `
 
-  // const links = [
-  //   { label: "Home", to: "/" },
-  //   { label: "Projects", to: "/projects" },
-  //   { label: "About me", to: "/about" },
-  // ]
-
   return (
     <StyledHeader>
       <Nav>
         <NavLink to="/" activeClassName="active">
-          Home
+          Mads Borup Petersen
         </NavLink>
-        <NavLink
-          to="/projects/"
-          activeClassName="active"
-          partiallyActive={true}
-        >
-          Projects
-        </NavLink>
-        <NavLink to="/about/" activeClassName="active">
-          About
-        </NavLink>
+        <LinkContainer>
+          <NavLink
+            to="/projects/"
+            activeClassName="active"
+            partiallyActive={true}
+          >
+            Projects
+          </NavLink>
+          <NavLink to="/about/" activeClassName="active">
+            About
+          </NavLink>
+        </LinkContainer>
       </Nav>
     </StyledHeader>
   )

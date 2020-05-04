@@ -3,11 +3,12 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 import Link from "./designSystem/Link"
-import H2 from "./designSystem/H2"
+import H3 from "./designSystem/H3"
 import ProjectCard from "./ProjectCard"
 
 const StyledProjectShowcase = styled.div`
   width: 100%;
+  margin-bottom: ${tokens.spacing.medium}px;
 `
 
 const Container = styled.div`
@@ -15,13 +16,13 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
 
-  h2 {
+  ${H3} {
     margin-bottom: 0;
-    margin-right: ${tokens.spacing.large}px;
+    margin-right: ${tokens.spacing.medium}px;
   }
 `
 
-const ProjectContainer = styled.div`
+const ProjectsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
@@ -57,12 +58,12 @@ const ProjectShowcase = () => (
     render={data => (
       <StyledProjectShowcase>
         <Container>
-          <H2>Projects</H2>
+          <H3>Projects</H3>
           <Link to="/projects/" withArrow="onward" primary>
             View all projects
           </Link>
         </Container>
-        <ProjectContainer>
+        <ProjectsContainer>
           {data.allMdx.edges.map((edge, i) => {
             const {
               title,
@@ -84,7 +85,7 @@ const ProjectShowcase = () => (
               />
             )
           })}
-        </ProjectContainer>
+        </ProjectsContainer>
       </StyledProjectShowcase>
     )}
   />

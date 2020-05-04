@@ -53,7 +53,7 @@ export default () => {
           <TextContainer>
             <H3>Hi, my name is Mads.</H3>
             <p>
-              I’m a frontend developer-in-progress with a BSc in Interaction
+              I’m a developer with a BSc in Interaction
               Design from Aalborg University.
             </p>
             <p>

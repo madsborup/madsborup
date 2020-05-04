@@ -23,18 +23,19 @@ interface CommonLinkProps {
 
 type LinkProps = CommonLinkProps & (InternalLinkProps | ExternalLinkProps)
 
-const ArrowOnward = styled.span`
+const Arrow = styled.span`
   color: ${tokens.colors.textMuted};
   margin-left: ${tokens.spacing.xsmall}px;
   transition: transform 0.2s ease-in-out;
   display: inline-block;
+`;
+
+const ArrowOnward = styled(Arrow)`
+  margin-left: ${tokens.spacing.xsmall}px;
 `
 
-const ArrowBackward = styled.span`
-  color: ${tokens.colors.textMuted};
+const ArrowBackward = styled(Arrow)`
   margin-right: ${tokens.spacing.xsmall}px;
-  transition: transform 0.2s ease-in-out;
-  display: inline-block;
 `
 
 const InternalLink = styled(GatsbyLink)<InternalLinkProps>`

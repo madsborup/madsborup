@@ -14,10 +14,11 @@ interface Props {
 }
 
 const ProjectCard = ({ title, description, image, tools, link }: Props) => {
+
   const StyledProjectCard = styled(Link)`
     display: flex;
     flex-direction: column;
-    border-radius: ${tokens.spacing.small}px;
+    border-radius: ${tokens.spacing.xsmall}px;
     transition: box-shadow 0.2s ease-in-out;
     font-weight: 400;
     overflow: hidden;
@@ -48,13 +49,6 @@ const ProjectCard = ({ title, description, image, tools, link }: Props) => {
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: ${tokens.spacing.medium}px;
-  `
-
-  const Tools = styled.div`
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: ${tokens.spacing.medium}px;
   `
 
   return (
