@@ -9,6 +9,7 @@ interface InternalLinkProps {
   partiallyActive?: boolean
   withArrow?: "onward" | "backward"
   primary?: boolean;
+  outline?: boolean;
 }
 
 interface ExternalLinkProps {
@@ -26,8 +27,8 @@ type LinkProps = CommonLinkProps & (InternalLinkProps | ExternalLinkProps)
 const Arrow = styled.span`
   color: ${tokens.colors.textMuted};
   margin-left: ${tokens.spacing.xsmall}px;
-  transition: transform 0.2s ease-in-out;
   display: inline-block;
+  transition: transform 0.2s ease-in-out;
 `;
 
 const ArrowOnward = styled(Arrow)`
@@ -41,17 +42,20 @@ const ArrowBackward = styled(Arrow)`
 const InternalLink = styled(GatsbyLink)<InternalLinkProps>`
   color: ${({ primary }) => primary ? tokens.colors.white : tokens.colors.headings};
   background: ${({ primary }) => primary ? tokens.colors.primary : 'none'};
-  padding: ${({ primary }) => primary && `${tokens.spacing.xsmall}px ${tokens.spacing.large}px`};
-  border-radius: 20px;
+  padding: ${({ primary, outline }) => (primary || outline) && `${tokens.spacing.xsmall}px ${tokens.spacing.large}px`};
+  border: ${({ outline }) => outline && `1px solid ${tokens.colors.border}`};
+  border-radius: 22px;
   text-decoration: none;
   font-size: ${tokens.font.size.regular};
   font-weight: 600;
+  transition: 0.1s ease-in-out;
 
   &:hover {
     text-decoration: ${({ withArrow }) => (withArrow ? "none" : "underline")};
+    background: ${({ outline }) => outline ? tokens.colors.hover : 'none'};
 
     ${ArrowOnward} {
-      color: ${({ primary }) => primary ? tokens.colors.white : tokens.colors.primary};
+      color: ${({ primary }) => (primary) ? tokens.colors.white : tokens.colors.primary};
       transform: translateX(8px);
     }
 
@@ -81,6 +85,7 @@ const Link: React.FC<LinkProps> = ({
   partiallyActive,
   withArrow,
   primary,
+  outline,
   children,
 }: LinkProps): ReactElement<typeof GatsbyLink | HTMLAnchorElement> => {
   return to ? (
@@ -91,6 +96,7 @@ const Link: React.FC<LinkProps> = ({
       partiallyActive={partiallyActive}
       withArrow={withArrow}
       primary={primary}
+      outline={outline}
     >
       {withArrow === "backward" && <ArrowBackward>←</ArrowBackward>}
       {children}

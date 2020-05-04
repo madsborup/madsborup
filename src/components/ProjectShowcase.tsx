@@ -42,6 +42,7 @@ const ProjectShowcase = () => (
                 description
                 tools
                 featuredLink
+                accent
                 featuredImage {
                   childImageSharp {
                     fluid {
@@ -59,7 +60,7 @@ const ProjectShowcase = () => (
       <StyledProjectShowcase>
         <Container>
           <H3>Projects</H3>
-          <Link to="/projects/" withArrow="onward" primary>
+          <Link to="/projects/" withArrow="onward" outline>
             View all projects
           </Link>
         </Container>
@@ -70,6 +71,7 @@ const ProjectShowcase = () => (
               description,
               tools,
               featuredLink,
+              accent,
               featuredImage,
             } = edge.node.frontmatter
 
@@ -82,6 +84,7 @@ const ProjectShowcase = () => (
                 tools={tools}
                 link={featuredLink}
                 key={i}
+                imageBgColor={accent}
               />
             )
           })}
