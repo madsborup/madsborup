@@ -5,6 +5,7 @@ description: A conversational UI for interaction with Smart City data
 category: Web Application
 featuredImage: ../assets/images/projects/ropaa/monti_app.png
 featuredLink: /projects/ropå/
+accent: "#84C7C6"
 time: 
 - "2018"
 - 4 months

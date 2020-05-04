@@ -7,7 +7,7 @@ featuredLink: /projects/duks/
 category: Web Application
 time: 
 - "Dec 2019"
-- -> on going
+- -> ongoing
 links: 
 - url: https://duks.site
   label: duks.site ⎋

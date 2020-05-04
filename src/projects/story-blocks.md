@@ -5,6 +5,7 @@ description: A physical programming language for teaching Computational Thinking
 category: Physical Product
 featuredImage: ../assets/images/projects/story_blocks/character.png
 featuredLink: /projects/story-blocks/
+accent: "#233456"
 time: 
 - "2017"
 - 4 months

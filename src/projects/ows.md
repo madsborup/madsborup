@@ -1,10 +1,10 @@
 ---
 title: OWS
 date: 2017-04-01
-description: an application for managing mechanics time at a car dealership
+description: Application for managing mechanics time at a car dealership
 category: Windows application
-featuredImage: ../assets/images/projects/ropaa/monti_app.png
-featuredLink: /projects/ropå/
+featuredImage: ../assets/images/projects/OWS/sketch.png
+featuredLink: /projects/ows/
 time: 
 - "2017"
 - 4 months
