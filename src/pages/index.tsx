@@ -29,7 +29,6 @@ export default () => {
     <Layout>
       <Section>
         <Greeting>
-          <H1>👾</H1>
           <H4>Hi, I'm Mads.</H4>
           <p>
             I'm a developer with a BSc in Interaction

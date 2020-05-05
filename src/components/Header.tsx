@@ -54,7 +54,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     <StyledHeader>
       <Nav>
         <NavLink to="/" activeClassName="active">
-          Mads Borup Petersen
+          ◾️ Mads Borup Petersen
         </NavLink>
         <LinkContainer>
           <NavLink
