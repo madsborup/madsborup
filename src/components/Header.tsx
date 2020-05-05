@@ -42,7 +42,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
 
     &:hover {
       text-decoration: none;
-      color: ${tokens.colors.text};
+      color: ${tokens.colors.headings};
     }
 
     &.${props => props.activeClassName} {

@@ -15,6 +15,7 @@ const Content = styled.div`
   align-items: flex-start;
   width: 100%;
   max-width: ${tokens.WRAPPER_WIDTH}px;
+  margin-top: ${tokens.spacing.large}px;
 `
 
 const Wrapper: React.FC = ({ children }) => {

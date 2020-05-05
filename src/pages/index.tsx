@@ -12,7 +12,6 @@ export default () => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: ${tokens.spacing.medium}px 0 0;
     max-width: 560px;
 
     ${H4} {
