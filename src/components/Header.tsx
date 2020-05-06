@@ -12,7 +12,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    padding: ${tokens.spacing.xxsmall}px 0;
+    padding: ${tokens.spacing.xsmall}px 0;
   `
 
   const Nav = styled.nav`
@@ -34,6 +34,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
   const NavLink = styled(PlainLink)`
     padding: 0;
     background: none;
+    color: ${tokens.colors.textMuted};
     text-align: center;
     border-radius: ${tokens.BORDER_RADIUS}px;
     font-size: ${tokens.font.size.regular};
@@ -42,7 +43,7 @@ const Header: React.FC<Props> = ({ title }: Props) => {
 
     &:hover {
       text-decoration: none;
-      color: ${tokens.colors.headings};
+      color: ${tokens.colors.text};
     }
 
     &.${props => props.activeClassName} {
@@ -50,12 +51,21 @@ const Header: React.FC<Props> = ({ title }: Props) => {
     }
   `
 
+  const Logo = styled(PlainLink)`
+    color: ${tokens.colors.primary};
+
+    &:hover {
+      text-decoration: none;
+    }
+  `
+
+
   return (
     <StyledHeader>
       <Nav>
-        <NavLink to="/" activeClassName="active">
+        <Logo to="/" activeClassName="active">
           ◾️ Mads Borup Petersen
-        </NavLink>
+        </Logo>
         <LinkContainer>
           <NavLink
             to="/projects/"

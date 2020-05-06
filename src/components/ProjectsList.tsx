@@ -16,7 +16,7 @@ const List = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
-  grid-gap: ${tokens.spacing.medium}px;
+  grid-gap: ${tokens.spacing.large}px;
   margin-bottom: ${tokens.spacing.xlarge}px;
 `
 

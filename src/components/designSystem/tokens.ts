@@ -1,7 +1,7 @@
 import '../../../static/fonts/inter.css'
 
 const BASELINE = 16;
-const BORDER_RADIUS = 8;
+const BORDER_RADIUS = 6;
 const WRAPPER_WIDTH = 1200;
 const CONTENT_WIDTH = 960;
 const MEDIA_BREAK = 768;
@@ -11,7 +11,7 @@ const SCALES = {
   XSMALL: 0.5,
   SMALL: 0.75,
   MEDIUM: 1,
-  LARGE: 2,
+  LARGE: 1.5,
   XLARGE: 3,
 };
 
@@ -24,7 +24,7 @@ export default {
     headings: "#000000",
     headingsMuted: "3b3578",
     text: "#2f3037",
-    textMuted: "#a8a8a8",
+    textMuted: "#888",
     primary: "#000000",
     primaryMuted: "#92C3F9",
     primaryBorder: "#E5F2FF",

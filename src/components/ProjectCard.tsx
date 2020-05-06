@@ -24,17 +24,17 @@ const ProjectCard = ({
   const StyledProjectCard = styled(Link)`
     display: flex;
     flex-direction: column;
-    border-radius: ${tokens.spacing.xxsmall}px;
+    border-radius: ${tokens.BORDER_RADIUS}px;
     transition: box-shadow 0.2s ease-in-out;
     font-weight: 400;
     overflow: hidden;
-    box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.15),
-      0px -1px 2px 0 rgba(0, 0, 0, 0.02);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12),
+      0px -1px 2px rgba(0, 0, 0, 0.05);
 
     &:hover {
       text-decoration: none;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15),
-        0px -1px 2px 0 rgba(0, 0, 0, 0.02);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15),
+        0px -1px 2px rgba(0, 0, 0, 0.02);
     }
   `
 
@@ -45,12 +45,14 @@ const ProjectCard = ({
     color: ${tokens.colors.headings};
     background: ${tokens.colors.white};
 
-    h3 {
+    ${H3} {
       margin-bottom: ${tokens.spacing.xsmall}px;
+      font-weight: 600;
     }
   `
 
   const Description = styled.div`
+    color: ${tokens.colors.text};
     font-size: ${tokens.font.size.h4};
     font-weight: 400;
     line-height: 1.5;
@@ -62,16 +64,13 @@ const ProjectCard = ({
       <Image
         fluid={image}
         style={{
-          height: "200px",
+          height: "190px",
           backgroundColor: imageBgColor ? imageBgColor : `#F9F5F1`,
         }}
       />
       <Container>
         <H3>{title}</H3>
         <Description>{description}</Description>
-        <Link to={link} withArrow="onward">
-          Go to project
-        </Link>
       </Container>
     </StyledProjectCard>
   )

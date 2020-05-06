@@ -15,6 +15,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: ${tokens.spacing.large}px;
 
   ${H3} {
     margin-bottom: 0;
@@ -26,8 +27,7 @@ const ProjectsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
-  grid-gap: ${tokens.spacing.medium}px;
-  margin-top: ${tokens.spacing.large}px;
+  grid-gap: ${tokens.spacing.large}px;
 `
 
 const ProjectShowcase = () => (

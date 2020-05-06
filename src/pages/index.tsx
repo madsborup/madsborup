@@ -32,7 +32,7 @@ export default () => {
           <H4>Hi, I'm Mads.</H4>
           <p>
             I'm a developer with a BSc in Interaction
-            Design. Currently learning what's working on the web.
+            Design. Currently learning what's working on the web 👨🏻‍💻
           </p>
         </Greeting>
       </Section>
