@@ -3,8 +3,9 @@ title: Duks
 date: 2020-01-01
 description: A simple project management tool for small teams
 featuredImage: ../assets/images/projects/duks/front.png
+accent: "#f5f0eb"
 featuredLink: /projects/duks/
-category: Web Application
+category: Web App
 time: 
 - "Dec 2019"
 - -> ongoing

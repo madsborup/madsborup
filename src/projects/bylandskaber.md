@@ -2,6 +2,7 @@
 title: Bylandskaber
 date: 2017-01-01
 description: 3D-printed miniatures of parts of Copenhagen using open source data
+category: 3D-printing
 featuredImage: ../assets/images/projects/bylandskaber/model.png
 featuredLink: /projects/bylandskaber/
 time:

@@ -2,7 +2,7 @@
 title: OWS
 date: 2017-04-01
 description: Application for managing mechanics time at a car dealership
-category: Windows application
+category: Windows App
 featuredImage: ../assets/images/projects/OWS/sketch.png
 featuredLink: /projects/ows/
 time: 

@@ -2,7 +2,7 @@
 title: Face tracking
 date: 2017-01-01
 description: Mapping face movements to surface using p5.js
-category: Web application
+category: p5.js
 featuredImage: ../assets/images/projects/face_tracking/face_3.png
 featuredLink: /projects/face-tracking/
 contribution: 

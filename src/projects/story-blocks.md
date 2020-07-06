@@ -2,7 +2,7 @@
 title: Story Blocks
 date: 2017-12-01
 description: A physical programming language for teaching Computational Thinking
-category: Physical Product
+category: Physical product
 featuredImage: ../assets/images/projects/story_blocks/character.png
 featuredLink: /projects/story-blocks/
 accent: "#233456"

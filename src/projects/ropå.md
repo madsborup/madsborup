@@ -2,10 +2,10 @@
 title: RoPå
 date: 2018-07-01
 description: A conversational UI for interaction with Smart City data
-category: Web Application
+category: Web App
 featuredImage: ../assets/images/projects/ropaa/monti_app.png
 featuredLink: /projects/ropå/
-accent: "#84C7C6"
+accent: "#80d1d0"
 time: 
 - "2018"
 - 4 months
