@@ -2,22 +2,29 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import tokens from "./designSystem/tokens"
 import ProjectCard from "./ProjectCard"
-import H3 from './designSystem/H3'
+import H1 from "./designSystem/H1"
+import H2 from "./designSystem/H2"
 import styled from "styled-components"
 
-const ListHeader = styled(H3)`
+const ListHeader = styled(H1)`
   padding-bottom: ${tokens.spacing.medium}px;
   margin-bottom: ${tokens.spacing.medium}px;
-  border-bottom: 1px solid ${tokens.colors.border};
   width: 100%;
 `
 
+const ListHeaderSmall = styled(H2)`
+  padding: ${tokens.spacing.large}px 0 ${tokens.spacing.small}px;
+  margin-bottom: ${tokens.spacing.medium}px;
+  border-top: 1px solid ${tokens.colors.border};
+  width: 100%;
+  font-weight: 800;
+`
 const List = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
   grid-gap: ${tokens.spacing.large}px;
-  margin-bottom: ${tokens.spacing.xlarge}px;
+  margin-bottom: ${tokens.spacing.large}px;
 `
 
 const ProjectsList = () => (
@@ -30,6 +37,7 @@ const ProjectsList = () => (
               frontmatter {
                 title
                 description
+                category
                 tools
                 featuredLink
                 accent
@@ -59,11 +67,11 @@ const ProjectsList = () => (
             .filter(edge => !edge.node.frontmatter.sideProject)
             .map((edge, i) => {
               const project = edge.node
-
               return (
                 <ProjectCard
                   title={project.frontmatter.title}
                   description={project.frontmatter.description}
+                  category={project.frontmatter.category}
                   image={
                     project.frontmatter.featuredImage.childImageSharp.fluid
                   }
@@ -75,7 +83,7 @@ const ProjectsList = () => (
               )
             })}
         </List>
-        <ListHeader>Other</ListHeader>
+        <ListHeaderSmall>Other</ListHeaderSmall>
         <List>
           {data.allMdx.edges
             .filter(project => project.node.frontmatter.sideProject)
@@ -85,6 +93,7 @@ const ProjectsList = () => (
                 <ProjectCard
                   title={project.frontmatter.title}
                   description={project.frontmatter.description}
+                  category={project.frontmatter.category}
                   image={
                     project.frontmatter.featuredImage.childImageSharp.fluid
                   }

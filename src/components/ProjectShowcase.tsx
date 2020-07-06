@@ -40,6 +40,7 @@ const ProjectShowcase = () => (
               frontmatter {
                 title
                 description
+                category
                 tools
                 featuredLink
                 accent
@@ -69,17 +70,17 @@ const ProjectShowcase = () => (
             const {
               title,
               description,
+              category,
               tools,
               featuredLink,
               accent,
               featuredImage,
             } = edge.node.frontmatter
-
-            console.log(featuredImage)
             return (
               <ProjectCard
                 title={title}
                 description={description}
+                category={category}
                 image={featuredImage.childImageSharp.fluid}
                 tools={tools}
                 link={featuredLink}

@@ -5,7 +5,7 @@ import styled from "styled-components"
 import tokens from "./designSystem/tokens"
 import DesignSystemProvider from "./designSystem/DesignSystemProvider"
 import Link from "./designSystem/Link"
-import Head from './Head'
+import Head from "./Head"
 import Header from "./Header"
 import Footer from "./Footer"
 
@@ -14,13 +14,15 @@ interface Props {
 }
 
 const Wrapper = styled.div`
-  margin: 0 auto;
-  max-width: ${tokens.WRAPPER_WIDTH}px;
+  display: flex;
+  align-items: center;
+  width: 100%;
   padding: 0 ${tokens.spacing.medium}px;
 `
 
 const Content = styled.div`
-  margin-top: ${tokens.spacing.large}px;
+  max-width: ${tokens.WRAPPER_WIDTH}px;
+  margin: 0 auto;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -31,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: auto;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizelegibility;
+        box-sizing: border-box;
     }
 
     html {

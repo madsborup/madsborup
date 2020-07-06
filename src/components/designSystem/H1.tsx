@@ -6,4 +6,5 @@ export default styled.h1`
   color: ${tokens.colors.headings};
   margin-bottom: ${tokens.spacing.small}px;
   line-height: 1;
+  font-weight: 800;
 `;
