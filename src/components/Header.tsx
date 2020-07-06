@@ -7,59 +7,58 @@ interface Props {
   title: string
 }
 
-const Header: React.FC<Props> = ({ title }: Props) => {
-  const StyledHeader = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    padding: ${tokens.spacing.xsmall}px 0;
-  `
+const StyledHeader = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: ${tokens.spacing.xsmall}px ${tokens.spacing.medium}px;
+`
 
-  const Nav = styled.nav`
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    width: 100%;
-    max-width: ${tokens.WRAPPER_WIDTH}px;
-    padding: ${tokens.spacing.large}px ${tokens.spacing.medium}px;
-  `
+const Nav = styled.nav`
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  width: 100%;
+  max-width: ${tokens.WRAPPER_WIDTH}px;
+  padding: ${tokens.spacing.large}px 0;
+`
 
-  const LinkContainer = styled.div`
-    display: grid;
-    grid-auto-columns: min-content;
-    grid-auto-flow: column;
-    justify-content: flex-end;
-    grid-gap: ${tokens.spacing.large}px;
-  `
+const LinkContainer = styled.div`
+  display: grid;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  justify-content: flex-end;
+  grid-gap: ${tokens.spacing.large}px;
+`
 
-  const NavLink = styled(PlainLink)`
-    padding: 0;
-    background: none;
-    color: ${tokens.colors.textMuted};
-    text-align: center;
-    border-radius: ${tokens.BORDER_RADIUS}px;
-    font-size: ${tokens.font.size.regular};
-    font-weight: 600;
-    letter-spacing: 0.2px;
+const NavLink = styled(PlainLink)`
+  padding: 0;
+  background: none;
+  color: ${tokens.colors.textMuted};
+  text-align: center;
+  border-radius: ${tokens.BORDER_RADIUS}px;
+  font-size: ${tokens.font.size.regular};
+  font-weight: 600;
+  letter-spacing: 0.2px;
 
-    &:hover {
-      text-decoration: none;
-      color: ${tokens.colors.text};
-    }
+  &:hover {
+    text-decoration: none;
+    color: ${tokens.colors.text};
+  }
 
-    &.${props => props.activeClassName} {
-      color: ${tokens.colors.primary};
-    }
-  `
-
-  const Logo = styled(PlainLink)`
+  &.${props => props.activeClassName} {
     color: ${tokens.colors.primary};
+  }
+`
 
-    &:hover {
-      text-decoration: none;
-    }
-  `
+const Logo = styled(PlainLink)`
+  color: ${tokens.colors.primary};
 
+  &:hover {
+    text-decoration: none;
+  }
+`
 
+const Header: React.FC<Props> = ({ title }: Props) => {
   return (
     <StyledHeader>
       <Nav>
