@@ -1,22 +1,22 @@
 ---
-title: RoPå
+title: Hello Monti
 date: 2018-07-01
 description: A conversational UI for interaction with Smart City data
 category: Web App
-featuredImage: ../assets/images/projects/ropaa/monti_app.png
-featuredLink: /projects/ropå/
+featuredImage: ../assets/images/projects/hello-monti/monti_app.png
+featuredLink: /projects/hello-monti/
 accent: "#80d1d0"
 time: 
 - "2018"
 - 4 months
 contribution: 
 - Problem scoping
-- Prototyping
 - User research
+- Prototyping
 tools: 
 - React
 - Adobe UX
-about: RoPå was a Bachelor's project in collaboration with Montem (montem.io). In this project we proposed a solution for increasing awareness of the city environment through interaction with data collected from Montem's Smart City probe network.
+about: Hello Monti was a Bachelor's project in collaboration with Montem (montem.io). In this project we proposed a solution for increasing awareness of the city environment through interaction with data collected from Montem's Smart City probe network.
 outcome: A prototype app (React) with a CUI
 ---
 import ProjectHeader from "../components/ProjectHeader"
@@ -29,6 +29,6 @@ Montem has been developing city probes and would like to offer IoT-based service
 
 ### App
 
-RoPå allows users to talk to Monti, the collective mind of all Montem's probes. By giving information such as current mental state, users get suggestions from Monti about nice locations in the city, based on data from Montem's probes.
+The app allows users to talk to Monti, the collective mind of all Montem's probes. By giving information such as current mental state, users get suggestions from Monti about nice locations in the city, based on data from Montem's probes.
 
-![](../assets/images/projects/ropaa/monti_app.png)
+![](../assets/images/projects/hello-monti/monti_app.png)

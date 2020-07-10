@@ -5,6 +5,8 @@ description: Organizing content of Figma components by type
 category: Figma plugin
 featuredImage: ../assets/images/projects/figma-typed-content/tc_cover_letter.png
 featuredLink: /projects/figma-typed-content/
+time: 
+- "2020"
 contribution: 
 - Personal project
 tools: 
