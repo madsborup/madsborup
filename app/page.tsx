@@ -2,11 +2,11 @@ import Image from "next/image";
 import Header from "./components/Header";
 import ProjectCard from "./components/ProjectCard";
 import Hero from "./components/Hero";
-import { getAllProjects } from "@/lib/projects";
+import { getAllProjects, getBlurDataURL } from "@/lib/projects";
 import { Metadata } from "next";
 
-export default function Home() {
-  const projects = getAllProjects();
+export default async function Home() {
+  const projects = await getAllProjects();
 
   const sorted = projects.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -14,6 +14,11 @@ export default function Home() {
 
   const mainProjects = sorted.filter((p) => !p.fun);
   const funProjects = sorted.filter((p) => p.fun);
+
+  const [junierBlur, moodagentBlur] = await Promise.all([
+    getBlurDataURL("/media/projects/junier/thumb.png"),
+    getBlurDataURL("/media/projects/moodagent/thumb.png"),
+  ]);
 
   return (
     <>
@@ -26,6 +31,7 @@ export default function Home() {
             description="2024–Present"
             link="/projects/junier"
             bgColor="#BCC6D1"
+            blurDataURL={junierBlur}
           />
           <ProjectCard
             imgUrl="/media/projects/moodagent/thumb.png"
@@ -33,6 +39,7 @@ export default function Home() {
             description="2020–2023"
             link="/projects/moodagent"
             bgColor="#C7D1BC"
+            blurDataURL={moodagentBlur}
           />
         </div>
         <div className="flex flex-col pt-24 w-full">
@@ -48,6 +55,7 @@ export default function Home() {
                 description={project.description}
                 link={`/projects/${project.slug}`}
                 bgColor={project.accent}
+                blurDataURL={project.blurDataURL}
               />
             ))}
             {funProjects.map((project) => (
@@ -58,6 +66,7 @@ export default function Home() {
                 description={project.description}
                 link={`/projects/${project.slug}`}
                 bgColor={project.accent}
+                blurDataURL={project.blurDataURL}
               />
             ))}
           </div>

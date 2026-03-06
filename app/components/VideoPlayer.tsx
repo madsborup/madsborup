@@ -19,6 +19,7 @@ export default function VideoPlayer({
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
+  const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -106,7 +107,15 @@ export default function VideoPlayer({
   if (!controls) {
     return (
       <figure className="my-12">
-        <video src={src} autoPlay loop muted playsInline className="w-full" />
+        <video
+          src={src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          onLoadedData={() => setLoaded(true)}
+          className={`w-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+        />
         {caption && (
           <figcaption className="text-foreground-muted text-sm mt-2">
             {caption}
@@ -135,7 +144,8 @@ export default function VideoPlayer({
           muted
           playsInline
           onClick={togglePlay}
-          className="w-full"
+          onLoadedData={() => setLoaded(true)}
+          className={`w-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
         />
         <div
           className={`absolute bottom-0 left-0 right-0 flex items-center gap-3 px-4 py-3 transition-opacity duration-200 ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}`}

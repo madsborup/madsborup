@@ -65,6 +65,16 @@ article li {
   @apply mt-1;
 }
 
+article img[data-placeholder] {
+  background-size: cover;
+  background-position: center;
+  @apply opacity-0 transition-opacity duration-500;
+}
+
+article img.loaded {
+  @apply opacity-100;
+}
+
 article figure {
   @apply my-8;
 }

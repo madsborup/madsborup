@@ -6,8 +6,8 @@ export const metadata = {
   description: "A collection of projects",
 };
 
-export default function ProjectsPage() {
-  const projects = getAllProjects();
+export default async function ProjectsPage() {
+  const projects = await getAllProjects();
 
   const sorted = projects.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -31,6 +31,7 @@ export default function ProjectsPage() {
               description={project.description}
               link={`/projects/${project.slug}`}
               bgColor={project.accent}
+              blurDataURL={project.blurDataURL}
             />
           ))}
         </div>
@@ -49,6 +50,7 @@ export default function ProjectsPage() {
                   description={project.description}
                   link={`/projects/${project.slug}`}
                   bgColor={project.accent}
+                  blurDataURL={project.blurDataURL}
                 />
               ))}
             </div>

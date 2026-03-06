@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useCallback } from "react";
 
 interface Props {
   title: string;
@@ -8,6 +11,7 @@ interface Props {
   target?: string;
   aspectRatio?: string;
   bgColor?: string | string[];
+  blurDataURL?: string;
 }
 
 export default function ProjectCard({
@@ -18,7 +22,14 @@ export default function ProjectCard({
   target,
   aspectRatio = "5/3",
   bgColor,
+  blurDataURL,
 }: Props) {
+  const [loaded, setLoaded] = useState(false);
+
+  const imgRef = useCallback((img: HTMLImageElement | null) => {
+    if (img?.complete) setLoaded(true);
+  }, []);
+
   return (
     <Link
       href={link}
@@ -27,7 +38,7 @@ export default function ProjectCard({
     >
       <div className="flex flex-col min-w-0">
         <div
-          className="overflow-hidden border border-foreground/2 transition-opacity duration-150 ease-out group-hover:opacity-90"
+          className="overflow-hidden transition-opacity duration-150 ease-out group-hover:opacity-90"
           style={{
             aspectRatio,
             background: Array.isArray(bgColor)
@@ -35,7 +46,22 @@ export default function ProjectCard({
               : bgColor,
           }}
         >
-          <img src={imgUrl} alt="" className="object-cover w-full h-full " />
+          <img
+            ref={imgRef}
+            src={imgUrl}
+            alt=""
+            onLoad={() => setLoaded(true)}
+            className={`object-cover w-full h-full transition-opacity duration-100 ${loaded ? "opacity-100" : "opacity-0"}`}
+            style={
+              blurDataURL && !loaded
+                ? {
+                    backgroundImage: `url(${blurDataURL})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }
+                : undefined
+            }
+          />
         </div>
         <div className="flex items-center font-normal justify-between py-2 gap-4 min-w-0">
           <h5 className="whitespace-nowrap overflow-hidden text-ellipsis min-w-0">

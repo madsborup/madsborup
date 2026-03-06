@@ -3,9 +3,9 @@ title: Story Blocks
 date: 2017-12-01
 description: A tangible learning tool for teaching children computational thinking.
 category: Physical Product Concept
-featuredImage: /media/projects/story-blocks/character.png
+featuredImage: /media/projects/story-blocks/character.jpg
 featuredLink: /projects/story-blocks/
-accent: "#233456"
+accent: "#A5D675"
 time:
   - "2017-2018"
 contribution:
@@ -31,7 +31,7 @@ Story Blocks was a group university project, designed in collaboration with a Da
 
 A paper and poster about this project was accepted at [SIDeR 2018](http://sider18.aalto.fi) in the category Tangible User Interfaces. I attended in Helsinki, Finland along with another project member. Read the proceedings [here](http://sider18.aalto.fi/img/FINAL-180527-SIDeR18ConferenceDigitalProceedings.pdf) (p. 140). An image of the poster can be seen at the bottom of this page.
 
-![Me talking.](/media/projects/story-blocks/sider.png)
+![Me talking.](/media/projects/story-blocks/sider.jpg)
 
 ### Solution
 
@@ -39,15 +39,15 @@ The core of Story Blocks revolves around creating small naratives around a scene
 
 We found that Story Blocks created many positive learning experiences for the children. They were not just figuring out a solution, but actively controlling and having ownership over the outcome and circumstances. This led to many situations where children started reflecting on their own capabilities. It was also great for the teachers, as they could act as facilitators of learning, guiding children in their journey around the tool.
 
-![Hub with blocks. This hub controls the lights in the scene.](/media/projects/story-blocks/hub.png)
+![Hub with blocks. This hub controls the lights in the scene.](/media/projects/story-blocks/hub.jpg)
 
 In this implementation a house was chosen as the scene. In this scene, children can control a door, lights, a window and a garage. Children can place figures at different spots to test their programming of the controlled parts of the scene.
 An example scenario could be that the children have programmed the door to open IF the cat figure is in front of the window OR the girl figure is in front of the door.
 
-![Cat variable being assigned to "if X in driveway" statement (left). It's then connected to another block to make a new logical AND statement: "if Cat in driveway AND someone is in front of the house" (right).](/media/projects/story-blocks/variable_block.png)
+![Cat variable being assigned to "if X in driveway" statement (left). It's then connected to another block to make a new logical AND statement: "if Cat in driveway AND someone is in front of the house" (right).](/media/projects/story-blocks/variable_block.jpg)
 
-![A figure being used in the house scene.](/media/projects/story-blocks/character.png)
+![A figure being used in the house scene.](/media/projects/story-blocks/character.jpg)
 
-![Early testing with 2nd grade children at a Primary School using a cardboard prototype (left). A functional prototype was also developed and tested with children (right).](/media/projects/story-blocks/test.png)
+![Early testing with 2nd grade children at a Primary School using a cardboard prototype (left). A functional prototype was also developed and tested with children (right).](/media/projects/story-blocks/test.jpg)
 
 ![Poster presented at SIDeR 2018.](/media/projects/story-blocks/sider_poster.png)

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import VideoPlayer from "./VideoPlayer";
 
 type ContentPart =
@@ -31,10 +32,29 @@ function parseContent(html: string): ContentPart[] {
 }
 
 export default function ArticleContent({ html }: { html: string }) {
+  const ref = useRef<HTMLElement>(null);
   const parts = parseContent(html);
 
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const images = ref.current.querySelectorAll<HTMLImageElement>(
+      "img[data-placeholder]"
+    );
+
+    images.forEach((img) => {
+      if (img.complete) {
+        img.classList.add("loaded");
+        return;
+      }
+      img.addEventListener("load", () => img.classList.add("loaded"), {
+        once: true,
+      });
+    });
+  }, [html]);
+
   return (
-    <article className="max-w-none">
+    <article ref={ref} className="max-w-none">
       {parts.map((part, i) =>
         part.type === "video" ? (
           <VideoPlayer

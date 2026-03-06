@@ -7,6 +7,7 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import type { Root, Element } from "hast";
 import { visit } from "unist-util-visit";
+import sharp from "sharp";
 
 const VIDEO_EXTENSIONS = /\.(mp4|webm|ogg|mov)(\?|$)/i;
 
@@ -69,6 +70,50 @@ function rehypeImageCaption() {
   };
 }
 
+function rehypeBlurPlaceholder() {
+  return async (tree: Root) => {
+    const images: { node: Element; filePath: string }[] = [];
+
+    visit(tree, "element", (node: Element) => {
+      if (
+        node.tagName === "img" &&
+        typeof node.properties.src === "string" &&
+        node.properties.src.startsWith("/")
+      ) {
+        images.push({
+          node,
+          filePath: path.join(process.cwd(), "public", node.properties.src),
+        });
+      }
+    });
+
+    await Promise.all(
+      images.map(async ({ node, filePath }) => {
+        try {
+          const buffer = await sharp(filePath).resize(20).blur().toBuffer();
+          const base64 = `data:image/jpeg;base64,${buffer.toString("base64")}`;
+          node.properties.dataPlaceholder = base64;
+          node.properties.style = `background-image: url(${base64})`;
+        } catch {}
+      })
+    );
+  };
+}
+
+export async function getBlurDataURL(
+  imagePath: string
+): Promise<string | undefined> {
+  try {
+    const filePath = imagePath.startsWith("/")
+      ? path.join(process.cwd(), "public", imagePath)
+      : imagePath;
+    const buffer = await sharp(filePath).resize(20).blur().toBuffer();
+    return `data:image/jpeg;base64,${buffer.toString("base64")}`;
+  } catch {
+    return undefined;
+  }
+}
+
 const projectsDirectory = path.join(process.cwd(), "content/projects");
 
 export interface ProjectFrontmatter {
@@ -112,6 +157,7 @@ export async function getProjectBySlug(slug: string): Promise<Project> {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypeImageCaption)
+    .use(rehypeBlurPlaceholder)
     .use(rehypeVideoFromImg)
     .use(rehypeStringify)
     .process(content);
@@ -123,9 +169,11 @@ export async function getProjectBySlug(slug: string): Promise<Project> {
   };
 }
 
-export function getAllProjects(): (ProjectFrontmatter & { slug: string })[] {
+export async function getAllProjects(): Promise<
+  (ProjectFrontmatter & { slug: string; blurDataURL?: string })[]
+> {
   const slugs = getProjectSlugs();
-  return slugs
+  const projects = slugs
     .map((slug) => {
       const filePath = path.join(projectsDirectory, `${slug}.md`);
       const fileContents = fs.readFileSync(filePath, "utf8");
@@ -133,4 +181,15 @@ export function getAllProjects(): (ProjectFrontmatter & { slug: string })[] {
       return { slug, ...(data as ProjectFrontmatter) };
     })
     .filter((project) => project.listed !== false);
+
+  const withBlur = await Promise.all(
+    projects.map(async (project) => {
+      const blurDataURL = project.featuredImage
+        ? await getBlurDataURL(project.featuredImage)
+        : undefined;
+      return { ...project, blurDataURL };
+    })
+  );
+
+  return withBlur;
 }

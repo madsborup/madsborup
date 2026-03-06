@@ -4,6 +4,7 @@ date: 2017-01-01
 description: Mapping face movements to flat surface.
 featuredImage: /media/projects/sneak-peak/face_tracking.png
 featuredLink: /projects/face-tracking/
+accent: "#233456"
 time: 
 - "2017"
 tools: 
