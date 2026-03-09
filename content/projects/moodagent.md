@@ -1,28 +1,29 @@
 ---
 title: Moodagent
 date: 2020-07-01
-description: Novel AI-enabled music discovery experiences.
+description: Novel AI-powered music discovery experiences.
 category: Music Streaming Service
 listed: false
 featuredImage: /media/projects/moodagent/thumb.png
 accent: "#625E68"
-time:
+timeline:
   - "2020-2023"
 skills:
   - Prototyping
   - Concept Development
-  - Applied AI
   - Interaction Design
+  - Applied AI
   - Internal Tools
 ---
 
-* Was part of a cross-functional team identifying and exploring novel, differentiated product features and opportunities.
-* Led ideation, concept development, and prototyping in varying fidelity across projects applying AI (audio classification, computer vision, embeddings) within music streaming and discovery.
+At Moodagent I drove exploration of novel product opportunities and features through end-to-end prototyping in a cross-functional team, applying AI (audio classification, vision, embeddings) across multiple projects. One concept was patented and some attracted new investor interest.
 
 ### Highlighted work
 
-I worked on an AI-powered music discovery feature that enabled users to discover music through their own and others' user-captured videos. The goal was to create a novel solution for personalised music recommendations, giving users ownership of discovery and a way to share the experience. My contribution included initial conceptualisation, design, and prototyping - from sketches to functional app.
+Video Playlists was an AI-powered music discovery feature, enabling users to discover music through their own and others' user-generated videos. The goal was to create a novel solution for personalised music recommendations, giving users ownership of discovery and a way to share the experience.
 
-Alongside this, I built an internal tool for qualitative evaluation of Video-to-Music matching models and human-feedback collection for model training, which grew into a tool used by several teams.
+I shaped the initial conceptualisation and prototyping - from sketches to functional app - in collaboration with engineers. The main challenge was utilising Moodagent's existing technology in relation to video classification; connecting the intent of the video captured by the user to their personal music taste.
 
-![Marketing video highlighting "Moments" video playlists feature.](/media/projects/moodagent/moodagent_moments.mp4?controls)
+Alongside this, I independently built a tool for qualitative evaluation of internal video-to-music AI models and human-feedback collection for model training, which grew into a tool used by several teams in transition from prototype to production.
+
+![](/media/projects/moodagent/moodagent_moments.mp4?controls)

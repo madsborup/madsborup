@@ -9,8 +9,8 @@ export default function Page() {
   return (
     <div className="grid grid-cols-1 max-w-[640px] sm:grid-cols-[1fr_200px] gap-12 w-full pt-24 items-start">
       <div className="flex flex-col gap-6 text-foreground/80 leading-relaxed">
-        <h1 className="text-4xl font-[500] leading-[1.1] -tracking-[0.0125em] text-foreground">
-          Hi, my name is Mads.
+        <h1 className="text-4xl font-[500] font-serif leading-[1.1] -tracking-[0.0125em] text-foreground">
+          Hi, I'm Mads.
         </h1>
         <p>
           I'm a designer with hands-on technical experience and a background in

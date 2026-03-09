@@ -11,6 +11,21 @@ import sharp from "sharp";
 
 const VIDEO_EXTENSIONS = /\.(mp4|webm|ogg|mov)(\?|$)/i;
 
+function rehypeExternalLinks() {
+  return (tree: Root) => {
+    visit(tree, "element", (node: Element) => {
+      if (
+        node.tagName === "a" &&
+        typeof node.properties.href === "string" &&
+        /^https?:\/\//.test(node.properties.href)
+      ) {
+        node.properties.target = "_blank";
+        node.properties.rel = "noopener noreferrer";
+      }
+    });
+  };
+}
+
 function rehypeVideoFromImg() {
   return (tree: Root) => {
     visit(tree, "element", (node: Element, index, parent) => {
@@ -28,10 +43,8 @@ function rehypeVideoFromImg() {
         node.tagName = "video";
         node.properties = {
           src: cleanSrc,
-          autoPlay: true,
-          loop: true,
           muted: true,
-          playsInline: true,
+          ...(!hasControls && { autoPlay: true, loop: true, playsInline: true }),
           ...(hasControls && { dataControls: "true" }),
         };
         node.children = [];
@@ -70,36 +83,6 @@ function rehypeImageCaption() {
   };
 }
 
-function rehypeBlurPlaceholder() {
-  return async (tree: Root) => {
-    const images: { node: Element; filePath: string }[] = [];
-
-    visit(tree, "element", (node: Element) => {
-      if (
-        node.tagName === "img" &&
-        typeof node.properties.src === "string" &&
-        node.properties.src.startsWith("/")
-      ) {
-        images.push({
-          node,
-          filePath: path.join(process.cwd(), "public", node.properties.src),
-        });
-      }
-    });
-
-    await Promise.all(
-      images.map(async ({ node, filePath }) => {
-        try {
-          const buffer = await sharp(filePath).resize(20).blur().toBuffer();
-          const base64 = `data:image/jpeg;base64,${buffer.toString("base64")}`;
-          node.properties.dataPlaceholder = base64;
-          node.properties.style = `background-image: url(${base64})`;
-        } catch {}
-      })
-    );
-  };
-}
-
 export async function getBlurDataURL(
   imagePath: string
 ): Promise<string | undefined> {
@@ -123,7 +106,8 @@ export interface ProjectFrontmatter {
   category: string;
   featuredImage: string;
   accent: string;
-  time: string[];
+  time: string;
+  timeline: string[];
   contribution: string[];
   tools: string[];
   skills?: string[];
@@ -156,8 +140,8 @@ export async function getProjectBySlug(slug: string): Promise<Project> {
   const result = await unified()
     .use(remarkParse)
     .use(remarkRehype)
+    .use(rehypeExternalLinks)
     .use(rehypeImageCaption)
-    .use(rehypeBlurPlaceholder)
     .use(rehypeVideoFromImg)
     .use(rehypeStringify)
     .process(content);

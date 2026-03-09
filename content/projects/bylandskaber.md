@@ -1,12 +1,11 @@
 ---
 title: Bylandskaber
-date: 2017-08-01
+date: 2019-08-01
 description: 3D-printed cityscapes of Copenhagen.
 featuredImage: /media/projects/bylandskaber/model.png
 featuredLink: /projects/bylandskaber/
 accent: "#D9D9D9"
-time:
-- "2019"
+time: "2019"
 tools: 
 - Rhino 3D
 about: Bylandskaber are 15x15cm 3D-printed models of parts of Copenhagen. Modelled based on open-source data from opendata.dk. Printed with matte white PLA.

@@ -1,6 +1,6 @@
 ---
 title: Typed Content
-date: 2020-06-01
+date: 2019-06-01
 description: Organizing content of Figma components by type.
 featuredImage: /media/projects/typed-content/thumb.png
 featuredLink: /projects/figma-typed-content/

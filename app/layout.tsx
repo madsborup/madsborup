@@ -40,7 +40,7 @@ export default function RootLayout({
 
 export const metadata = {
   title: {
-    template: "%s – Mads Borup",
+    template: "%s – Mads Borup Petersen",
   },
   icons: {
     icon: [

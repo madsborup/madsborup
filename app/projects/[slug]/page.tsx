@@ -70,16 +70,10 @@ export default async function ProjectPage({
         <ArticleContent html={contentHtml} />
 
         <aside className="flex flex-col gap-6 text-sm">
-          {frontmatter.links && (
+          {frontmatter.time && (
             <div>
-              <h4 className="text-foreground-muted font-medium pb-1">Links</h4>
-              <ul className="text-foreground">
-                {frontmatter.links.map((link) => (
-                  <a target="_blank" className="hover:underline" key={link} href={link}>
-                    {link}{" "}↗
-                  </a>
-                ))}
-              </ul>
+              <h4 className="text-foreground-muted font-medium pb-1">Year</h4>
+              <p className="text-foreground">{frontmatter.time}</p>
             </div>
           )}
           {frontmatter.about && (
@@ -88,12 +82,32 @@ export default async function ProjectPage({
               <p className="text-foreground">{frontmatter.about}</p>
             </div>
           )}
-          {frontmatter.time && (
+
+          {frontmatter.timeline && (
             <div>
               <h4 className="text-foreground-muted font-medium pb-1">
                 Timeline
               </h4>
-              <p className="text-foreground">{frontmatter.time.join(" - ")}</p>
+              <p className="text-foreground">
+                {frontmatter.timeline.join(" - ")}
+              </p>
+            </div>
+          )}
+          {frontmatter.links && (
+            <div>
+              <h4 className="text-foreground-muted font-medium pb-1">Links</h4>
+              <ul className="text-foreground">
+                {frontmatter.links.map((link) => (
+                  <a
+                    target="_blank"
+                    className="hover:underline"
+                    key={link}
+                    href={link}
+                  >
+                    {link} ↗
+                  </a>
+                ))}
+              </ul>
             </div>
           )}
           {frontmatter.contribution && (

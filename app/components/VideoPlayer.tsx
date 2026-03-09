@@ -19,8 +19,8 @@ export default function VideoPlayer({
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState(false);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -39,6 +39,7 @@ export default function VideoPlayer({
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
+    setHasStarted(true);
     v.paused ? v.play() : v.pause();
   };
 
@@ -113,8 +114,7 @@ export default function VideoPlayer({
           loop
           muted
           playsInline
-          onLoadedData={() => setLoaded(true)}
-          className={`w-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className="w-full"
         />
         {caption && (
           <figcaption className="text-foreground-muted text-sm mt-2">
@@ -139,16 +139,34 @@ export default function VideoPlayer({
         <video
           ref={videoRef}
           src={src}
-          autoPlay
-          loop
           muted
-          playsInline
+          preload="auto"
           onClick={togglePlay}
-          onLoadedData={() => setLoaded(true)}
-          className={`w-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className="block w-full"
         />
+        {!hasStarted && (
+          <div
+            onClick={togglePlay}
+            style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.2)", cursor: "pointer" }}
+          >
+            <svg
+              width="130"
+              height="130"
+              viewBox="0 0 24 24"
+              fill="white"
+              opacity={0.9}
+            >
+              <polygon
+                points="8,5 19,12 8,19"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                stroke="white"
+              />
+            </svg>
+          </div>
+        )}
         <div
-          className={`absolute bottom-0 left-0 right-0 flex items-center gap-3 px-4 py-3 transition-opacity duration-200 ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          className={`absolute bottom-0 left-0 right-0 flex items-center gap-3 px-4 py-3 transition-opacity duration-200 ${hasStarted && visible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         style={{
           background: "linear-gradient(transparent, rgba(0, 0, 0, 0.5))",
         }}

@@ -51,7 +51,7 @@ export default function ProjectCard({
             src={imgUrl}
             alt=""
             onLoad={() => setLoaded(true)}
-            className={`object-cover w-full h-full transition-opacity duration-100 ${loaded ? "opacity-100" : "opacity-0"}`}
+            className={`object-cover w-full h-full ${loaded ? "" : "opacity-0"}`}
             style={
               blurDataURL && !loaded
                 ? {

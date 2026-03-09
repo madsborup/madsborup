@@ -27,7 +27,7 @@ export default async function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
           <ProjectCard
             imgUrl="/media/projects/junier/thumb.png"
-            title="Junier - What matters when AI does most of the work?"
+            title="Junier - Making designers work smarter."
             description="2024–Present"
             link="/projects/junier"
             bgColor="#BCC6D1"
@@ -35,7 +35,7 @@ export default async function Home() {
           />
           <ProjectCard
             imgUrl="/media/projects/moodagent/thumb.png"
-            title="Moodagent - Novel AI-enabled music discovery experiences."
+            title="Moodagent - Novel AI-powered music discovery experiences."
             description="2020–2023"
             link="/projects/moodagent"
             bgColor="#C7D1BC"
