@@ -8,6 +8,48 @@ function formatTime(seconds: number): string {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
+function Spinner() {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "rgba(0,0,0,0.3)",
+        pointerEvents: "none",
+      }}
+    >
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 24 24"
+        fill="none"
+        style={{ animation: "spin 1s linear infinite" }}
+      >
+        <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="rgba(255,255,255,0.3)"
+          strokeWidth="2.5"
+        />
+        <path
+          d="M12 2a10 10 0 0 1 10 10"
+          stroke="white"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
 export default function VideoPlayer({
   src,
   controls = false,
@@ -21,6 +63,7 @@ export default function VideoPlayer({
   const progressRef = useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -87,18 +130,27 @@ export default function VideoPlayer({
     };
     const onTimeUpdate = () => setCurrentTime(v.currentTime);
     const onLoaded = () => setDuration(v.duration);
+    const onWaiting = () => setLoading(true);
+    const onCanPlay = () => setLoading(false);
 
     v.addEventListener("play", onPlay);
     v.addEventListener("pause", onPause);
     v.addEventListener("timeupdate", onTimeUpdate);
     v.addEventListener("loadedmetadata", onLoaded);
+    v.addEventListener("waiting", onWaiting);
+    v.addEventListener("canplay", onCanPlay);
+    v.addEventListener("playing", onCanPlay);
     if (v.duration) setDuration(v.duration);
+    if (v.readyState >= 3) setLoading(false);
 
     return () => {
       v.removeEventListener("play", onPlay);
       v.removeEventListener("pause", onPause);
       v.removeEventListener("timeupdate", onTimeUpdate);
       v.removeEventListener("loadedmetadata", onLoaded);
+      v.removeEventListener("waiting", onWaiting);
+      v.removeEventListener("canplay", onCanPlay);
+      v.removeEventListener("playing", onCanPlay);
       clearTimeout(hideRef.current);
     };
   }, []);
@@ -108,14 +160,22 @@ export default function VideoPlayer({
   if (!controls) {
     return (
       <figure className="my-12">
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full"
-        />
+        <div
+          className="relative aspect-video overflow-hidden rounded-sm"
+          style={{ background: "#000" }}
+        >
+          <video
+            ref={videoRef}
+            src={src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover"
+          />
+          {loading && <Spinner />}
+        </div>
         {caption && (
           <figcaption className="text-foreground-muted text-sm mt-2">
             {caption}
@@ -144,6 +204,7 @@ export default function VideoPlayer({
           onClick={togglePlay}
           className="block w-full"
         />
+        {loading && hasStarted && <Spinner />}
         {!hasStarted && (
           <div
             onClick={togglePlay}
