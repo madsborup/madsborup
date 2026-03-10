@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { label: "Portfolio", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Resume", href: "/Mads_Borup_Petersen_Resume.pdf", target: "_blank" },
+  { label: "Resume", href: "/Mads_Borup_Petersen_CV.pdf", target: "_blank" },
 ];
 
 export default function Header() {

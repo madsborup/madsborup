@@ -16,7 +16,7 @@ skills:
   - Internal Tools
 ---
 
-At Moodagent I drove exploration of novel product opportunities and features through end-to-end prototyping in a cross-functional team, applying AI (audio classification, vision, embeddings) across multiple projects. One concept was patented and some attracted new investor interest.
+At Moodagent I drove exploration of novel product opportunities and features through end-to-end prototyping in a cross-functional team, applying AI (audio classification, vision, embeddings) across projects. One concept was patented and some attracted new investor interest.
 
 ### Highlighted work
 
