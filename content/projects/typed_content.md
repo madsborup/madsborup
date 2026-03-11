@@ -5,8 +5,6 @@ description: Organizing content of Figma components by type.
 featuredImage: /media/projects/typed-content/thumb.png
 featuredLink: /projects/figma-typed-content/
 accent: "#343434"
-time: 
-- "2020"
 skills: 
 - Figma Plugin API
 - TypeScript

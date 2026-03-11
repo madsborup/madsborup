@@ -6,8 +6,8 @@ category: Physical Product Concept
 featuredImage: /media/projects/story-blocks/character.png
 featuredLink: /projects/story-blocks/
 accent: "#A5D675"
-timeline:
-  - "2017-2018"
+# timeline:
+#   - "2017-2018"
 contribution:
   - User Research
   - Prototyping
