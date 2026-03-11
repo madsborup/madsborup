@@ -1,4 +1,10 @@
 import Image from "next/image";
+import profileImg from "@/public/media/me/profile.png";
+import workspaceImg from "@/public/media/me/workspace.png";
+import messImg from "@/public/media/me/mess.png";
+import drawImg from "@/public/media/me/draw.png";
+import waveImg from "@/public/media/me/wave.png";
+import funImg from "@/public/media/me/fun.png";
 
 export const metadata = {
   title: "About",
@@ -14,27 +20,27 @@ export default function Page() {
             Hi, I'm Mads.
           </h1>
           <p>
-            I'm a product designer who builds across physical and digital.
-            Recently, I've spent a lot of time building with, and thinking about,
-            AI. I have a design background, and my technical
-            skills are mostly self-taught.
+            I'm a designer who builds across physical and digital. Recently,
+            I've spent a lot of time building, and thinking about, AI-enabled
+            products. I have a design background, and my technical skills are
+            mostly self-taught.
           </p>
           <p>
-            I like learning new things. My
-            process usually involves a lot of learning through making to explore
-            and identify new opportunities.
+            I like learning new things. My process usually involves a lot of
+            learning through making to explore and identify new opportunities.
           </p>
           <p>
-            Currently, I'm working on Junier; an AI-powered tool that helps teams build
-            better products with integrated user feedback, wherever they work.
+            Currently, I'm working on Junier; an AI-powered tool that helps
+            teams build better products with integrated user feedback, wherever
+            they work.
           </p>
         </div>
         <div className="order-first sm:order-last">
           <Image
-            src="/media/me/profile.jpeg"
+            src={profileImg}
             alt="Mads Borup Petersen"
             width={200}
-            height={250}
+            height={200}
             className="w-full object-cover"
             placeholder="blur"
           />
@@ -47,42 +53,42 @@ export default function Page() {
         }}
       >
         <Image
-          src="/media/me/workspace.jpg"
-          alt="Mads Borup Petersen"
-          width={200}
-          height={250}
+          src={workspaceImg}
+          alt="Workspace."
+          width={650}
+          height={488}
           className="w-full object-cover"
           placeholder="blur"
         />
         <Image
-          src="/media/me/mess.jpg"
+          src={messImg}
           alt="A mess."
-          width={200}
-          height={250}
+          width={650}
+          height={488}
           className="w-full object-cover"
           placeholder="blur"
         />
         <Image
-          src="/media/me/draw.jpg"
-          alt="A mess."
-          width={200}
-          height={250}
+          src={drawImg}
+          alt="Drawing."
+          width={650}
+          height={488}
           className="w-full object-cover"
           placeholder="blur"
         />{" "}
         <Image
-          src="/media/me/wavy.jpg"
-          alt="A mess."
-          width={200}
-          height={250}
+          src={waveImg}
+          alt="Light."
+          width={650}
+          height={488}
           className="w-full object-cover"
           placeholder="blur"
         />
         <Image
-          src="/media/me/fun.jpg"
-          alt="A mess."
-          width={200}
-          height={250}
+          src={funImg}
+          alt="Fun."
+          width={650}
+          height={488}
           className="w-full object-cover"
           placeholder="blur"
         />
