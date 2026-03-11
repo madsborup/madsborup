@@ -3,7 +3,7 @@ import profileImg from "@/public/media/me/profile.png";
 import workspaceImg from "@/public/media/me/workspace.png";
 import messImg from "@/public/media/me/mess.png";
 import drawImg from "@/public/media/me/draw.png";
-import waveImg from "@/public/media/me/wave.png";
+import playImg from "@/public/media/me/play.png";
 import funImg from "@/public/media/me/fun.png";
 
 export const metadata = {
@@ -61,14 +61,6 @@ export default function Page() {
           placeholder="blur"
         />
         <Image
-          src={messImg}
-          alt="A mess."
-          width={650}
-          height={488}
-          className="w-full object-cover"
-          placeholder="blur"
-        />
-        <Image
           src={drawImg}
           alt="Drawing."
           width={650}
@@ -77,8 +69,16 @@ export default function Page() {
           placeholder="blur"
         />{" "}
         <Image
-          src={waveImg}
-          alt="Light."
+          src={messImg}
+          alt="A mess."
+          width={650}
+          height={488}
+          className="w-full object-cover"
+          placeholder="blur"
+        />
+        <Image
+          src={playImg}
+          alt="Player."
           width={650}
           height={488}
           className="w-full object-cover"
