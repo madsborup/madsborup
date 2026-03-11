@@ -36,6 +36,7 @@ export default function Page() {
             width={200}
             height={250}
             className="w-full object-cover"
+            placeholder="blur"
           />
         </div>
       </div>
@@ -51,6 +52,7 @@ export default function Page() {
           width={200}
           height={250}
           className="w-full object-cover"
+          placeholder="blur"
         />
         <Image
           src="/media/me/mess.jpg"
@@ -58,6 +60,7 @@ export default function Page() {
           width={200}
           height={250}
           className="w-full object-cover"
+          placeholder="blur"
         />
         <Image
           src="/media/me/draw.jpg"
@@ -65,6 +68,7 @@ export default function Page() {
           width={200}
           height={250}
           className="w-full object-cover"
+          placeholder="blur"
         />{" "}
         <Image
           src="/media/me/wavy.jpg"
@@ -72,6 +76,7 @@ export default function Page() {
           width={200}
           height={250}
           className="w-full object-cover"
+          placeholder="blur"
         />
         <Image
           src="/media/me/fun.jpg"
@@ -79,6 +84,7 @@ export default function Page() {
           width={200}
           height={250}
           className="w-full object-cover"
+          placeholder="blur"
         />
       </div>
     </div>
