@@ -47,15 +47,19 @@ In this implementation a house was chosen as a scene. Children can control a doo
 
 ![Early testing with 2nd grade children at a Primary School using a cardboard prototype (left). Later,  a functional prototype was developed and tested (right).](/media/projects/story-blocks/test.jpg)
 
-![Scene with exposed wires between controllable parts (servos, lights) and activation areas in the floor plane. A hub with Arduino inside is also visible.](/media/projects/story-blocks/scene.png)
+![Exploded view of the hub and block components.](/media/projects/story-blocks/render.png)
+
+![Scene with exposed wires between controllable parts (servos, lights) and activation areas in the floor plane.](/media/projects/story-blocks/scene.png)
+
+![Hub with connected blocks.](/media/projects/story-blocks/connection.jpg)
+
+![](/media/projects/story-blocks/snap.mp4?controls)
 
 ### Outcome
 
 We found that Story Blocks created many positive learning experiences for the children. Working in groups, the tool sparked collaboration and discussion as children negotiated what their scene should do and how to program it. This led to situations where children started reflecting on their own capabilities, and experienced success around curriculum subjects they hadn't had previously.
 
 Teachers found that Story Blocks enabled them to step back into a facilitator role. They reported the tool to be playful and intuitive, and that they "didn't have to teach the children how to use it first". This allowed them to use their limited time to be present in guiding the children in their learning.
-
-![Exploded view of the hub and block components.](/media/projects/story-blocks/render.png)
 
 ### Design reflections
 
