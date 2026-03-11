@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <nav className="flex w-full items-center justify-center sm:items-start mt-16">
       <div className="flex w-full text-foreground-muted max-w-[1380px] items-center justify-between text-md py-8 px-8 bg-background sm:items-start">
-        <span>Built with 💭 by Mads</span>
+        <span></span>
         <div className="flex items-center gap-4">
           <a
             className={
