@@ -16,7 +16,7 @@ export default function Header() {
       <div className="flex w-full max-w-[1380px] items-center text-md justify-between py-8 px-8 bg-background sm:items-start">
         <a className="font-[450] flex flex-col sm:flex-row items-start sm:items-center sm:gap-2" href="/">
           <h4>Mads Borup</h4>
-          <h4 className="text-foreground-muted hidden sm:inline">Product Designer + Builder</h4>
+          <h4 className="text-foreground-muted hidden sm:inline">Designer + Builder</h4>
         </a>
         <div className="flex items-center gap-4">
           {navItems.map((item) => (
