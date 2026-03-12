@@ -9,7 +9,7 @@ export default function Hero() {
           a curious designer who <i>builds</i>.
         </span>
       </h1>
-      <div className="flex flex-col text-[15px] gap-1">
+      <div className="flex flex-col text-md gap-1">
         <div className="flex items-start gap-4">
           <span className="text-foreground-muted shrink-0 w-26 sm:w-36">2024–Present</span>
           <span className="text-foreground w-26 shrink-0 sm:w-36">Junier</span>
